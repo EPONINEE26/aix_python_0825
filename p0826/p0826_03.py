@@ -4,7 +4,7 @@
 # print("입력숫자 : {}".format(num))
 
 a = 10
-b = 3 
+b = 3
 # input으로 받은 모든 것은 문자열 타입 
 #a = int(input("1번째 숫자를 입력하세요.")) # str 타입을 int타입으로 변경 
 #b = int(input("2번째 숫자를 입력하세요.")) 
