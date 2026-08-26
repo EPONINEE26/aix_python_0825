@@ -14,23 +14,24 @@ b = 3
 #print(a/b)
 #print(a**b) # 10*10*10 / 10에 3승
 
+
+
+
 # 아이디, 패스워드를 입력받아 출력하시오
 # 아이디:aaa, 패스워드:1111
 
 id="aaa"
-pw:"1111"
+pw="1111"
 a=input("아이디를 입력하세요") 
 b=input("패스워드를 입력하세요")
 # input("아이디, 패스워드를 입력받아 출력하시오")
-print("input(아이디:{}, 패스워드:{}".format(id, pw))
+print("input(아이디:{}, 패스워드:{})".format(id, pw))
 print("aaa==id")
 print("1111==pw")
 
 print("아이디확인:{}".format("aaa==id"))
 print("패스워드확인:{}".format("1111==pw"))
-print("아이디:{}, 패스워드:{}".format(id,pw))
-
-   
+print("아이디:{}, 패스워드:{}".format(id,pw))  
 
 num1 = 100
 num2 = 100

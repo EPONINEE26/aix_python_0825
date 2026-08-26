@@ -26,9 +26,6 @@ a = int(input("숫자를 입력하세요."))
 print(a%2==0) 
 print(a%2==1) 
 
-
-
-
 #a,b = 1,2 
 #print(a,b)
 
