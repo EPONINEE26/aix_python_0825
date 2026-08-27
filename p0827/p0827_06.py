@@ -1,9 +1,18 @@
+# 확인 작업 
+# 원하는 값 in 리스트, 원하는 값 not in 리스트 
+
+# arr = [1,3.,5,7,9]
+# if 7 in arr:
+#     print("원하는 수가 있습니다.")
+# else:
+#     print("원하는 수가 없습니다.")
+
 # 리스트 순차 정렬 (sort), 역순정렬 sort(reverse=True)
-arr = [1,15,8,23,2]
-arr.sort() # 순차 정렬 
-print(arr)
-arr.sort(reverse=True) # 역순정렬 
-print(arr)
+# arr = [1,15,8,23,2]
+# arr.sort() # 순차 정렬 
+# print(arr)
+# arr.sort(reverse=True) # 역순정렬 
+# print(arr)
 
 
 # 리스트 삭제 - del, pop, remove, clear (모두삭제할 때 사용하는 명령어)
@@ -27,9 +36,6 @@ print(arr)
 # print(arr)
 # arr.remove("안녕")
 # print(arr)
-
-
-
 
 # 리스트 추가
 # a = [1,2,3]
