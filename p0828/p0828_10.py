@@ -12,18 +12,17 @@ for i in range(1,200):
       sum=sum+i
       if sum>200:
          print("200보다 큽니다.",i)
-         break
 print("합계:",sum)
 
 # 200을 넘는 이전 시점의 i, 합계를 출력하시오.
 sum=0
-for i in range(1,200):
+for i in range(1,11):
      sum=sum+i
-     if sum>200:
+     if sum>11:
          print("200보다 크기 바로 앞일때:",i-1)
-         print("200 초과전 시점:",sum)
-         break
-print("합계:",sum)
+         print("200 초과전 시점:",sum-i)
+print(sum)
+
 
 # 구구단을 출력하시오.
 for i in range(2,10):
