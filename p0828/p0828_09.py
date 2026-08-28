@@ -30,8 +30,10 @@ print(1)
 # arr=list(range(1,11))
 # print(arr)
 
-for i in range(10):
-    print("안녕")
+# for i in range(10):
+#     print("안녕")
 
-for _ in range(10):
-    print("안녕") 
+# for _ in range(10):
+#     print("안녕") 
+
+
