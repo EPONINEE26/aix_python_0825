@@ -79,6 +79,9 @@
 # print(bb.rfind("i")) 
 
 
-bb = "abcdefghi"
-print(bb.rfind("c"))
-print(bb.rfind("i"))
+# bb = "abcdefghi"
+# print(bb.rfind("c"))
+# print(bb.rfind("i"))
+
+
+
