@@ -41,4 +41,3 @@
 # print(str1[::2]) # 2칸씩 띄어서 출력 
 # print(len(str1)) 
 
-
