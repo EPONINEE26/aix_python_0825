@@ -200,3 +200,6 @@ import random
 # elif  iarr[4] in lotto:
 #      print("당첨!! ") else:print("꽝")
   
+
+
+
