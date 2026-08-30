@@ -17,6 +17,8 @@
 
 
 
+
+
 # score = int(input("점수 입력 : "))
 
 # if score >= 90 :
