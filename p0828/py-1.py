@@ -14,11 +14,6 @@
 #             else: 
 #                 print("F")
 
-
-
-
-
-
 # score = int(input("점수 입력 : "))
 
 # if score >= 90 :
@@ -158,7 +153,7 @@
 # print(a,b) 
 
 
-import random
+# import random
 
 # # randint-랜덤1개, sample-랜덤여러개(중복불가),
 # # shuffle-전체섞음, choices-랜덤여러개(중복가능)
@@ -202,6 +197,4 @@ import random
 # elif  iarr[4] in lotto:
 #      print("당첨!! ") else:print("꽝")
   
-
-
 

@@ -88,7 +88,6 @@
 # print(str1[::2]) 
 # print(len(str1))
 
-
 # a=20
 # print("{}".format(a))
 # print("{:10d}".format(a))
@@ -233,9 +232,9 @@
 
 
 # 구구단을 출력하시오.
-# for i in range(2,10):
-#     for j in range(1,10):
-#         print("{}x{}={}".format(i,j,i*j))
+for i in range(2,10):
+     for j in range(1,10):
+         print("{}x{}={}".format(i,j,i*j))
 
 
 # no=[]
@@ -247,8 +246,6 @@
 #     kor.append(int(input("국어점수 입력:")))
 # for i in range(3):
 #     print("{}\t{}\t{}".format(no[i],name[i],kor[i]))
-
-
 
 
 
