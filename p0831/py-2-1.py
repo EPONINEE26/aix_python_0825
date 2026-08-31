@@ -366,3 +366,5 @@ for i in range(3):
      print(f"{no[i]}\t{name[i]}\t{kor[i]}\t{eng[i]}\t{math[i]}\t{total[i]}\t{avg[i]:.2f}")
 
 
+
+
