@@ -211,7 +211,7 @@
 
 # # 100을 넘는 시점의 i의 값과 i번째의 합계를 출력하시오. 
 # sum=0
-# for i in range(1,1000):
+# for i in range(1,100):
 #     print(i)
 #     sum=sum+i
 #     if sum > 100:
@@ -232,9 +232,9 @@
 
 
 # 구구단을 출력하시오.
-for i in range(2,10):
-     for j in range(1,10):
-         print("{}x{}={}".format(i,j,i*j))
+# for i in range(2,10):
+#      for j in range(1,10):
+#          print("{}x{}={}".format(i,j,i*j))
 
 
 # no=[]
