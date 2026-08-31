@@ -7,7 +7,9 @@
 # print("{:3,d}".format(123456789)) # 천단위 표시 
 # print("{:.2f}".format(12.12345)) # 소수점제한 
 # print("{:+010d}".format(a))  
+
 # print("{:+010d}".format(-10))  # +: 숫자앞에 부호를 붙임 
+# print("{:+010d}".format(-10)) # +: 숫자앞에 부호를 붙임 
 
 # cc="aabbccddeeff"
 # print(cc.upper())

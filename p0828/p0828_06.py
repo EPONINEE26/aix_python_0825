@@ -20,6 +20,8 @@
 # print("inch:", a)
 # print("cm:", b)
 
+=======
+>>>>>>> 82bcd0115f82606ece7dccec3282211b38757006
 # # 파이 * 반지금 * 반지름 
 # # 2* 파이 * 반지름 
 
@@ -29,30 +31,5 @@
 # print("넓이 :", pi*a*a)
 # print("넓이:", pi*a**2) 
 # print("원의둘레:", 2*pi*a)
-
-
-# a=20
-# print("{}".format(a)) 
-# print("{:10d}".format(a))
-# print("{:010d}".format(a)) 
-# print("{:3d}".format(123456789)) 
-# print("{:3,d}".format(123456789)) 
-# print("{:2f}".format(123456789)) 
-# print("{:+010d}".format(a))
-# print("{:+010d}".format(-10)) 
-
-#         20
-# 0000000020
-# 123456789
-# 123,456,789
-# 123456789.000000
-# +000000020
-# -000000010
-
-
-# import datetime
-# import random
-# now=datetime.datetime.now()
-# print("{}년{}월{}일 {}시{}분{}초".format(2026, 8, 28, 11, 7, 10))
 
 

@@ -89,14 +89,3 @@ s=[] #리스트 타입 - append, insert / pop, del, remove (지울때에는 웬�
 # # f 함수 / format 함수 사용 하는때가 다르기에 사용할 때마다 확인하고 사용
 # print("-"*60)
 
-import random
-
-# score=random.randint(1,100)
-# if score>=60:
-#     print("합격!")
-# else:
-#     print("불합격") 
-
-# result="합격" if score >=60 else "불합격"
-# print("랜덤숫자:", score)
-
