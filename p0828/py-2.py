@@ -237,6 +237,8 @@
 #          print("{}x{}={}".format(i,j,i*j))
 
 
+
+
 # no=[]
 # name=[]
 # kor=[]
