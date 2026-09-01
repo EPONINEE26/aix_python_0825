@@ -58,8 +58,20 @@
 #     "aaa":"토마토", "ddd":"바나나", "eee":"딸기", "bbb":"배"
 # }
 
+# import operator # 예전 방법 최근엔 잘 안 씀 
 # name_sort1=[]
-# # name_sort1=sorted(name_dic.items(), keys=operator.itemgetter(0))
+# name_sort1=sorted(name_dic.items(), key=lambda  x:x[0]) 
+# name_sort1=sorted(name_dic.items(), key=lambda  x:x[0], reverse=True) 
+# print(name_sort1)
+
+# name_dic = {
+#     "aaa":'토마토',"ddd":"바나나","eee":"딸기","bbb":"배"
+# }
+
+# import operator
+# name_sort1 = []
+# name_sort1 = sorted(name_dic.items(),key=operator.itemgetter(0))
+
 
 # engs = {
 #     "car":"자동차",
@@ -116,5 +128,16 @@
 # print(alist3)
 # alist4=[1,2,3,4,5,6,7,8,9,]
 # print(alist4)
+
+# alist=list(range(1,21)) # c, c++ jave, 파이썬 다 사용 가능 
+# nlist=[]
+# for a in alist:
+#     if a%3==0:nlist.append(a)
+
+# print(nlist)
+
+# a=[n for n in range(1,21) if n%3==0] # 이 방법은 파이썬에서만 사용 
+# print(a)
+
 
 
