@@ -7,13 +7,15 @@
 #     print("3. 학생성적수정")
 #     print("4. 학생성적삭제")
 #     print("5. 학생검색")
+#     print("6. 학생이름정렬")
+#     print("7. 학생성적정렬")
 #     print("0. 프로그램종료")
 #     print("-"*40)
 #     choice = int(input("원하는 번호를 입력하세요.>> "))
 #     if choice == 1:
 #         print("[ 학생성적입력 ]")
 #         while True:
-#             no = len(stu_list)+1 #
+#             no = len(stu_list)+1 
 #             # no = input("번호입력 : ")
 #             print("자동번호 : ",no)
 #             name = input("이름입력(종료하려면 0) : ")
@@ -37,7 +39,7 @@
 #         print("[ 프로그램 종료 ]")
 #         break
 
-# stu_list = []
+stu_list = []
 
 while True:
     print("[ 학생성적프로그램 ]")
@@ -82,7 +84,7 @@ while True:
     else:
         print("[ 프로그램 종료 ]")
         break
-
+print(stu_list)
 
 
 
