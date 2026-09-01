@@ -125,21 +125,22 @@ result=1
 # 그 때 합계: 106 숫자의 합 
 # 이전 단계: 119
 
-# sum=0 (질문)
-# input1=int(input("숫자 입력:"))
-# input2=int(input("숫자 입력:"))
-# input3=int(input("숫자 입력:"))
+sum=0 
+input1=int(input("숫자 입력:"))
+input2=int(input("숫자 입력:"))
+input3=int(input("숫자 입력:"))
 
-# for i in range(1,101):
-#      sum=sum+input1
+for i in range(1,input1):
+    sum=sum+i
 
-# for i in range(1,101):
-#      sum=sum+input2
+for i in range(1,input2):
+    sum=sum+i
 
-# for i in range(1,101):
-#      sum=sum+input3 
+for i in range(1,input3):
+    sum=sum+i
 
-# print("합계:", sum)
+print("합계:", sum)
+
 
 # sum=0 (질문)
 # alist=[]
@@ -261,108 +262,108 @@ result=1
 #         print("입력한 숫자가 더 작습니다. 큰수 입력!!")
 
 # print("정답 : ",answer)
-# print("정답 : ",my_list[-1])
-# print("입력한모든 숫자 : ",my_list)
+# # print("정답 : ",my_list[-1])
+# # print("입력한모든 숫자 : ",my_list)
 
-# print("프로그램 종료")
-
-
-# import random
-# noArr=[10.40,2,9,5]
-# no=[]
-# i=0
-# count=0
-# answer=0
-# while True:
-#     i_no=int(input("숫자입력 : "))
-#     no.append (i_no)
-
-#     if i_no==0: 
-#         break 
-#     # 0을 입력할 때 종료 
-# for i in no:
-#     if i in noArr:
-#         count=count+1
-#         answer.append(i) # 입력 숫자가 정답일 때 i 값을 입력
+# # print("프로그램 종료")
 
 
-# # 종료할 때 입력된 숫자 모두 출력 
-# print("리스트 : ", noArr)
-# print("입력숫자 : ", no)
-# print("정답숫자 : ", answer)
-# print("정답개수 : ", count)
+# # import random
+# # noArr=[10.40,2,9,5]
+# # no=[]
+# # i=0
+# # count=0
+# # answer=0
+# # while True:
+# #     i_no=int(input("숫자입력 : "))
+# #     no.append (i_no)
+
+# #     if i_no==0: 
+# #         break 
+# #     # 0을 입력할 때 종료 
+# # for i in no:
+# #     if i in noArr:
+# #         count=count+1
+# #         answer.append(i) # 입력 숫자가 정답일 때 i 값을 입력
 
 
-# import random
+# # # 종료할 때 입력된 숫자 모두 출력 
+# # print("리스트 : ", noArr)
+# # print("입력숫자 : ", no)
+# # print("정답숫자 : ", answer)
+# # print("정답개수 : ", count)
 
-# lotto=random.sample(range(1,46),6) 
-# print("확인로또>>", lotto)
 
-# myNum=[]
-# count=0
-# answer=[]
-# i=0
+# # import random
 
-# for i in range(6):
-#     no=int(input("숫자입력:"))
-#     myNum.append(no)
-#     i=i+1
-#     if i in myNum:
-#         count=count+1
-#         answer.append(i)
+# # lotto=random.sample(range(1,46),6) 
+# # print("확인로또>>", lotto)
 
-# print("로또번호 : ", lotto)
-# print("입력한 번호 : ", myNum)
-# print("정답번호 : ", answer)
-# print("정답개수 : ", count)
+# # myNum=[]
+# # count=0
+# # answer=[]
+# # i=0
 
-# import random
+# # for i in range(6):
+# #     no=int(input("숫자입력:"))
+# #     myNum.append(no)
+# #     i=i+1
+# #     if i in myNum:
+# #         count=count+1
+# #         answer.append(i)
 
-# lotto=random.sample(range(1,46),6)
-# myNum=[]
-# count=0
-# answer=[]
-# i=0
+# # print("로또번호 : ", lotto)
+# # print("입력한 번호 : ", myNum)
+# # print("정답번호 : ", answer)
+# # print("정답개수 : ", count)
 
-# for i in range(6):
-#     no=int(input("숫자 입력:"))
-#     myNum.append(no)
+# # import random
 
-# for n in myNum:
-#     if n in lotto:
-#         count=count+1
-#         answer.append(m)
+# # lotto=random.sample(range(1,46),6)
+# # myNum=[]
+# # count=0
+# # answer=[]
+# # i=0
+
+# # for i in range(6):
+# #     no=int(input("숫자 입력:"))
+# #     myNum.append(no)
+
+# # for n in myNum:
+# #     if n in lotto:
+# #         count=count+1
+# #         answer.append(m)
                        
-# print("로또번호 : ", lotto)
-# print("입력한 번호 : ", myNum)
-# print("정답번호 : ", answer)
-# print("정답개수 : ", count)
+# # print("로또번호 : ", lotto)
+# # print("입력한 번호 : ", myNum)
+# # print("정답번호 : ", answer)
+# # print("정답개수 : ", count)
 
-no = []
-name = []
-kor = []
-eng = []
-math = []
-total = []
-avg = []
+# no = []
+# name = []
+# kor = []
+# eng = []
+# math = []
+# total = []
+# avg = []
 
-for i in range(3):
-    no.append(input("번호 입력:"))  # 괄호 닫기 추가 )
-    name.append(input("이름 입력:"))  # 괄호 닫기 추가 )
-    k_input = int(input("국어점수 입력:"))  # 괄호 닫기 추가 )
-    kor.append(k_input)
-        e_input = int(input("영어점수 입력:"))  # e_input(int(..) -> e_input = int(..) 수정
-    eng.append(e_input)
-        m_input = int(input("수학점수 입력:"))  # 괄호 닫기 추가 )
-    math.append(m_input)  # 누락되었던 수학 점수 리스트 저장 추가
-    total.append(k_input + e_input + m_input)
-    avg.append(k_input + e_input + m_input)
+# for i in range(3):
+#     no.append(input("번호 입력:"))  
+#     name.append(input("이름 입력:"))  
+#     k_input = int(input("국어점수 입력:"))  
+#     kor.append(k_input)
+#     e_input = int(input("영어점수 입력:"))  
+#     eng.append(e_input)
+#     m_input = int(input("수학점수 입력:"))  
+#     math.append(m_input)  # 누락되었던 수학 점수 리스트 저장 추가
+#     total.append(k_input + e_input + m_input)
+#     avg.append(k_input + e_input + m_input)
 
-print("[학생성적프로그램]")
-print("-" * 60)
-print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
-for i in range(3):
-     print(f"{no[i]}\t{name[i]}\t{kor[i]}\t{eng[i]}\t{math[i]}\t{total[i]}\t{avg[i]:.2f}")
+# print("[학생성적프로그램]")
+# print("-" * 60)
+# print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+# for i in range(3):
+#      print(f"{no[i]}\t{name[i]}\t{kor[i]}\t{eng[i]}\t{math[i]}\t{total[i]}\t{avg[i]:.2f}")
 
 
 
