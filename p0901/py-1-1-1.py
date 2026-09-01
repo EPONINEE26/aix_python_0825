@@ -25,7 +25,6 @@ while True:
     print("0. 프로그램종료")
 
 
-
     choice=int(input("원하는 번호를 입력하세요.>>"))
     if choice ==1:
         print("[ 학생성적프로그램 ]")
