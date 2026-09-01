@@ -55,11 +55,38 @@
 # 230:3자리숫자
 # 1:1자리숫자 .... 이렇게 출력하고자 할 때 
 
-# n_arr=[100,91,230,1,2,5,70,500]
+n_arr=[100,91,230,1,2,5,70,500]
 
-a=100
-b="100"
-print(int(input(len(b))))
-print(int(input(len(b))))
+# a=100
+# b="100"
+# print(int(input(len(b))))
+# print(int(input(len(b))))
+
+# n_arr=[100,91,230,1,2,5,70,500]
+# a_arr=[]
+# for n in n_arr: # 정수형 타입 -> 문자열 타입으로 변환 
+#     no=len(str(n))
+#     print(n, ":", no, "자리숫자")
+
+# n_arr=[100,91,230,1,2,5,70,500]
+# a_arr=[]
+# for n in n_arr: 
+#     no=len(str(n))
+#     a="{}:{}자리숫자".format(n,no) # format : 문자열로 변환 
+#     a_arr.append(a)
+#     print(a)
+# print(a_arr)
+
+# ['100:3자리숫자', '91:2자리숫자', '230:3자리숫자', '1:1자리숫자', '2:1자리숫자', '5:1자리숫자', '70:2자리숫자', '500:3자리숫자']
+
+n_arr=[100,91,230,1,2,5,70,500]
+a_arr=[]
+for n in n_arr: 
+    no=len(str(n))
+    a="{}:{}자리숫자".format(n,no) # format : 문자열로 변환 
+    a_arr.append(a)
+    print(a)
+print(a_arr)
+
 
 
