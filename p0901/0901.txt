@@ -1,0 +1,1305 @@
+# 구구단
+for i in range(2,9+1):
+    for j in range(1,10):
+        print("{} x {} = {}".format(i,j,i*j))
+
+# 1-100사이의 숫자맞추기
+# 1. 랜덤번호 1개 생성
+# 2. 무한으로 입력받기
+# 3. 숫자를 입력받기
+# 4. 랜덤번호와 숫자 비교
+# 5. 결과출력
+
+import random
+num = random.randint(1,100)
+
+# 반복문 : for-반복/회수지정,while-조건
+while True:
+# 구구단
+for i in range(2,9+1):
+    for j in range(1,10):
+        print("{} x {} = {}".format(i,j,i*j))
+
+# 1-100사이의 숫자맞추기
+# 1. 랜덤번호 1개 생성
+# 2. 무한으로 입력받기
+# 3. 숫자를 입력받기
+# 4. 랜덤번호와 숫자 비교
+# 5. 결과출력
+
+import random
+ran_no = random.randint(1,100)
+
+# 반복문 : for-반복/회수지정,while-조건
+in_no = 0 # 입력변수
+in_arr = [] #입력한 모든숫자 리스트저장
+while True:
+    in_no = int(input("1-100사이 숫자입력 : ")) # 숫자입력
+    # 입력한 숫자를 리스트에 넣기
+    in_arr.append(in_no)
+    if in_no == ran_no:
+        print("정답입니다.")
+        break
+    elif in_no > ran_no: #입력한수가 크면
+        print(in_no," 보다 작은수를 입력하세요.")
+    else:
+        print(in_no," 보다 큰수를 입력하세요.")
+
+print("입력한 모든 리스트 : ",in_arr)
+print("정답 : ",in_arr[-1])
+
+# 로또맞추기
+# 1. 랜덤번호 6개 생성
+# 2. 입력번호 6개 생성
+# 3. 랜덤번호,입력번호 비교
+# - for 입력번호 1개 가져와서 랜덤번호리스트와 비교
+# - 있는 번호를 리스트에 추가
+# 4. 결과 출력
+
+import random
+lotto = random.sample(range(1,46),6)
+print("확인 : ",lotto)
+
+in_arr = []
+no = 0
+for i in range(6):
+    no = int(input("1-45사이 숫자입력 : "))
+    in_arr.append(no)
+
+    # no = input("1-45사이 숫자입력 : ") #문자열
+    # if no.isdigit(): #문자열을 숫자로 변경가능한지
+    #     no = int(input("1-45사이 숫자입력 : "))
+    #     in_arr.append(no)
+
+answer_arr = []
+for i in in_arr:
+    if i in lotto:
+        answer_arr.append(i)
+
+# 결과출력
+print("로또번호 : ",lotto)
+print("입력번호 : ",in_arr)
+print("정답개수 : ",len(answer_arr))
+print("정답번호 : ",answer_arr)
+
+
+# [1,2,3,4,5,6,7,8,9] 1차원리스트
+# 리스트 - 직접입력,[0]*9,list(range(1,10))
+num_arr = list(range(1,10))
+print(num_arr)
+all_arr = []
+for i in range(0,9,3): # 0,3,6
+    print(i,end=" ") # 0,3,6
+    all_arr.append(num_arr[i:i+3])
+    # all_arr.append(num_arr[0:0+3])  #0-3 / 0,1,2
+    # all_arr.append(num_arr[3:3+3])  #3-6 / 3,4,5
+    # all_arr.append(num_arr[6:6+3])  #6-9 / 6,7,8
+print(all_arr)
+
+
+# [1,2,3,4,5,6,7,8,9] 1차원리스트
+# 리스트 - 직접입력,[0]*9,list(range(1,10))
+# num_arr = list(range(1,10))
+# print(num_arr)
+# all_arr = []
+# for i in range(0,9,3): # 0,3,6
+#     print(i,end=" ") # 0,3,6
+#     all_arr.append(num_arr[i:i+3])
+#     # all_arr.append(num_arr[0:0+3])  #0-3 / 0,1,2
+#     # all_arr.append(num_arr[3:3+3])  #3-6 / 3,4,5
+#     # all_arr.append(num_arr[6:6+3])  #6-9 / 6,7,8
+# print(all_arr)
+
+# stu_list = []
+
+# while True:
+#     print("[ 학생성적프로그램 ]")
+#     print("1. 학생입력")
+#     print("2. 학생출력")
+#     print("3. 학생성적수정")
+#     print("4. 학생성적삭제")
+#     print("5. 학생검색")
+#     print("0. 프로그램종료")
+#     print("-"*40)
+#     choice = int(input("원하는 번호를 입력하세요.>> "))
+#     if choice == 1:
+#         print("[ 학생성적입력 ]")
+#         while True:
+#             no = len(stu_list)+1 #
+#             # no = input("번호입력 : ")
+#             print("자동번호 : ",no)
+#             name = input("이름입력(종료하려면 0) : ")
+#             if name=="0": break
+#             kor = int(input("국어입력 : "))
+#             eng = int(input("영어입력 : "))
+#             math = int(input("수학입력 : "))
+#             total = kor+eng+math
+#             avg = total/3
+#             stu_list.append([no,name,kor,eng,math,total,avg])
+#             print(name," 학생성적이 등록되었습니다.")
+#             print()
+#     elif choice == 2:
+#         print("[ 학생성적출력 ]")
+#         print("입력된 학생성적 : ",len(stu_list))
+#         print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+#         print("-"*60)
+#         for s in stu_list:
+#             print("{}\t{}\t{}\t{}\t{}\t{}\t{:.2f}".format(*s))
+#     else:
+#         print("[ 프로그램 종료 ]")
+#         break
+
+# stu_list = []
+
+while True:
+    print("[ 학생성적프로그램 ]")
+    print("-"*40)
+    print("1. 학생입력")
+    print("2. 학생출력")
+    print("3. 학생성적수정")
+    print("4. 학생성적삭제")
+    print("5. 학생검색")
+    print("0. 프로그램종료")
+    print("-"*40)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    if choice == 1:
+        print("[ 학생성적입력 ]")
+        while True:
+            no = len(stu_list)+1 #
+            # no = input("번호입력 : ")
+            print("자동번호 : ",no)
+            name = input("이름입력(종료하려면 0) : ")
+            if name=="0": break
+            kor = int(input("국어입력 : "))
+            eng = int(input("영어입력 : "))
+            math = int(input("수학입력 : "))
+            total = kor+eng+math
+            avg = total/3
+            stu_list.append([no,name,kor,eng,math,total,avg])
+            print(name," 학생성적이 등록되었습니다.")
+            print()
+    elif choice == 2:
+        print("[ 학생성적출력 ]")
+        print("입력된 학생성적 : ",len(stu_list))
+        print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+        print("-"*60)
+        for s in stu_list:
+            print("{}\t{}\t{}\t{}\t{}\t{}\t{:.2f}".format(*s))
+    elif choice == 3:
+        print("3. 학생성적수정")
+    elif choice == 4:
+        print("4. 학생성적삭제")
+    elif choice == 5:
+        print("5. 학생검색")
+    else:
+        print("[ 프로그램 종료 ]")
+        break
+
+
+# 로또 맞추기 
+# 1. 랜덤번호 6개 생성
+# 2. 입력번호 6개 생성
+# 3. 랜덤번호와 입력번호 비교
+# - for 입력번호 1개 가져와서 랜덤번호리스트와 비교, 
+# - 해당 번호를 리스트에 추가 (count에 추가)
+# 4. 결과 출력 
+
+# import random
+# lotto=random.sample(range(1,46),6) 
+# print("확인로또 :", lotto)
+
+# in_arr=[] # 입력한 번호 들어갈 리스트 
+# no=0 # 변수 
+# for i in range(6):
+#     no=(input("1~45사이 숫자 입력 : ")) # 문자열 
+#     # 10a를 입력하면 에러가 남. 
+#     if no.isdigit(): # 문자열을 숫자로 변경가능한지 파악하는 함수 
+#         no=int(input("1~45사이 숫자 입력 : "))
+#         in_arr.append(no)
+
+# answer_arr=[]
+
+# for i in in_arr:
+#     if i in lotto:
+#         answer_arr.append(i)
+
+# print("로또 번호 : ", lotto)
+# print("입력 번호 : ", in_arr)
+# print("정답 개수 : ", len(answer_arr))
+# print("정답 번호 : " , answer_arr)
+
+# 로또맞추기
+# 1. 랜덤번호 6개 생성
+# 2. 입력번호 6개 생성
+# 3. 랜덤번호,입력번호 비교
+# - for 입력번호 1개 가져와서 랜덤번호리스트와 비교
+# - 있는 번호를 리스트에 추가
+# 4. 결과 출력
+
+import random
+lotto = random.sample(range(1,46),6)
+print("확인 : ",lotto)
+
+in_arr = []
+no = 0
+for i in range(6):
+    no = int(input("1-45사이 숫자입력 : "))
+    in_arr.append(no)
+
+    no = input("1-45사이 숫자입력 : ") #문자열
+    if no.isdigit(): #문자열을 숫자로 변경가능한지
+        no = int(input("1-45사이 숫자입력 : "))
+        in_arr.append(no)
+
+answer_arr = []
+for i in in_arr:
+    if i in lotto:
+        answer_arr.append(i)
+
+# 결과출력
+print("로또번호 : ",lotto)
+print("입력번호 : ",in_arr)
+print("정답개수 : ",len(answer_arr))
+print("정답번호 : ",answer_arr)
+
+
+# 구구단
+for i in range(2,9+1):
+    for j in range(1,10):
+        print("{} x {} = {}".format(i,j,i*j))
+
+# 1-100사이의 숫자맞추기
+# 1. 랜덤번호 1개 생성
+# 2. 무한으로 입력받기
+# 3. 숫자를 입력받기
+# 4. 랜덤번호와 숫자 비교
+# 5. 결과출력
+
+import random
+num = random.randint(1,100)
+
+# 반복문 : for-반복/회수지정,while-조건
+while True:이병호  [오전 9:50]
+# 구구단
+for i in range(2,9+1):
+    for j in range(1,10):
+        print("{} x {} = {}".format(i,j,i*j))
+
+# 1-100사이의 숫자맞추기
+# 1. 랜덤번호 1개 생성
+# 2. 무한으로 입력받기
+# 3. 숫자를 입력받기
+# 4. 랜덤번호와 숫자 비교
+# 5. 결과출력
+
+import random
+ran_no = random.randint(1,100)
+
+# 반복문 : for-반복/회수지정,while-조건
+in_no = 0 # 입력변수
+in_arr = [] #입력한 모든숫자 리스트저장
+while True:
+    in_no = int(input("1-100사이 숫자입력 : ")) # 숫자입력
+    # 입력한 숫자를 리스트에 넣기
+    in_arr.append(in_no)
+    if in_no == ran_no:
+        print("정답입니다.")
+        break
+    elif in_no > ran_no: #입력한수가 크면
+        print(in_no," 보다 작은수를 입력하세요.")
+    else:
+        print(in_no," 보다 큰수를 입력하세요.")
+
+print("입력한 모든 리스트 : ",in_arr)
+print("정답 : ",in_arr[-1])이병호  [오전 10:12]
+# 로또맞추기
+# 1. 랜덤번호 6개 생성
+# 2. 입력번호 6개 생성
+# 3. 랜덤번호,입력번호 비교
+# - for 입력번호 1개 가져와서 랜덤번호리스트와 비교
+# - 있는 번호를 리스트에 추가
+# 4. 결과 출력
+
+import random
+lotto = random.sample(range(1,46),6)
+print("확인 : ",lotto)
+
+in_arr = []
+no = 0
+for i in range(6):
+    no = int(input("1-45사이 숫자입력 : "))
+    in_arr.append(no)
+
+    # no = input("1-45사이 숫자입력 : ") #문자열
+    # if no.isdigit(): #문자열을 숫자로 변경가능한지
+    #     no = int(input("1-45사이 숫자입력 : "))
+    #     in_arr.append(no)
+
+answer_arr = []
+for i in in_arr:
+    if i in lotto:
+        answer_arr.append(i)
+
+# 결과출력
+print("로또번호 : ",lotto)
+print("입력번호 : ",in_arr)
+print("정답개수 : ",len(answer_arr))
+print("정답번호 : ",answer_arr)이병호  [오전 10:36]
+# 로또맞추기
+# 학생성적프로그램
+# 학생성적입력 - 변수,리스트-리스트,리스트-딕셔너리
+
+# [1,2,3,4,5,6,7,8,9] 1차원리스트
+# 리스트 - 직접입력,[0]*9,list(range(1,10))
+num_arr = list(range(1,10))
+print(num_arr)
+all_arr = []
+for i in range(0,9,3): # 0,3,6
+    print(i,end=" ") # 0,3,6
+    all_arr.append(num_arr[i:i+3])
+    # all_arr.append(num_arr[0:0+3])  #0-3 / 0,1,2
+    # all_arr.append(num_arr[3:3+3])  #3-6 / 3,4,5
+    # all_arr.append(num_arr[6:6+3])  #6-9 / 6,7,8
+print(all_arr)이병호  [오전 10:44]
+# 로또맞추기
+# 학생성적프로그램
+# 학생성적입력 - 변수,리스트-리스트,리스트-딕셔너리
+
+# stu_list = [
+#     [1,"홍길동",100,100,100,300,100.0],
+#     [2,"유관순",100,100,100,300,100.0],
+#     [3,"이순신",100,100,100,300,100.0],
+# ]
+
+stu_list = []
+# stu_list.append([1,"홍길동",100,100,100,300,100.0])
+for i in range(3):
+    no = input("번호입력 : ")
+    name = input("이름입력 : ")
+    kor = int(input("국어입력 : "))
+    eng = int(input("영어입력 : "))
+    math = int(input("수학입력 : "))
+    total = kor+eng+math
+    avg = total/3
+    stu_list.append([no,name,kor,eng,math,total,avg])
+
+print(stu_list)
+
+
+
+
+
+
+
+
+
+
+# [1,2,3,4,5,6,7,8,9] 1차원리스트
+# 리스트 - 직접입력,[0]*9,list(range(1,10))
+# num_arr = list(range(1,10))
+# print(num_arr)
+# all_arr = []
+# for i in range(0,9,3): # 0,3,6
+#     print(i,end=" ") # 0,3,6
+#     all_arr.append(num_arr[i:i+3])
+#     # all_arr.append(num_arr[0:0+3])  #0-3 / 0,1,2
+#     # all_arr.append(num_arr[3:3+3])  #3-6 / 3,4,5
+#     # all_arr.append(num_arr[6:6+3])  #6-9 / 6,7,8
+# print(all_arr)이병호  [오전 11:01]
+# 로또맞추기
+# 학생성적프로그램
+# 학생성적입력 - 변수,리스트-리스트,리스트-딕셔너리
+# stu_list = [
+#     [1,"홍길동",100,100,100,300,100.0],
+#     [2,"유관순",100,100,100,300,100.0],
+#     [3,"이순신",100,100,100,300,100.0],
+# ]
+stu_list = []
+# stu_list.append([1,"홍길동",100,100,100,300,100.0])
+while True:
+    no = len(stu_list)+1 #
+    # no = input("번호입력 : ")
+    print("자동번호 : ",no)
+    name = input("이름입력(종료하려면 0) : ")
+    if name=="0": break
+    kor = int(input("국어입력 : "))
+    eng = int(input("영어입력 : "))
+    math = int(input("수학입력 : "))
+    total = kor+eng+math
+    avg = total/3
+    stu_list.append([no,name,kor,eng,math,total,avg])
+
+print("입력된 학생성적 : ",len(stu_list))
+print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+print("-"*60)
+for s in stu_list:
+    print("{}\t{}\t{}\t{}\t{}\t{}\t{:.2f}".format(*s))
+
+
+
+
+
+
+
+
+
+
+
+# [1,2,3,4,5,6,7,8,9] 1차원리스트
+# 리스트 - 직접입력,[0]*9,list(range(1,10))
+# num_arr = list(range(1,10))
+# print(num_arr)
+# all_arr = []
+# for i in range(0,9,3): # 0,3,6
+#     print(i,end=" ") # 0,3,6
+#     all_arr.append(num_arr[i:i+3])
+#     # all_arr.append(num_arr[0:0+3])  #0-3 / 0,1,2
+#     # all_arr.append(num_arr[3:3+3])  #3-6 / 3,4,5
+#     # all_arr.append(num_arr[6:6+3])  #6-9 / 6,7,8
+# print(all_arr)이병호  [오전 11:42]
+stu_list = []
+
+while True:
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생입력")
+    print("2. 학생출력")
+    print("3. 학생성적수정")
+    print("4. 학생성적삭제")
+    print("5. 학생검색")
+    print("0. 프로그램종료")
+    print("-"*40)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    if choice == 1:
+        print("[ 학생성적입력 ]")
+        while True:
+            no = len(stu_list)+1 #
+            # no = input("번호입력 : ")
+            print("자동번호 : ",no)
+            name = input("이름입력(종료하려면 0) : ")
+            if name=="0": break
+            kor = int(input("국어입력 : "))
+            eng = int(input("영어입력 : "))
+            math = int(input("수학입력 : "))
+            total = kor+eng+math
+            avg = total/3
+            stu_list.append([no,name,kor,eng,math,total,avg])
+            print(name," 학생성적이 등록되었습니다.")
+            print()
+
+
+
+    elif choice == 2:
+        print("[ 학생성적출력 ]")
+        print("입력된 학생성적 : ",len(stu_list))
+        print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+        print("-"*60)
+        for s in stu_list:
+            print("{}\t{}\t{}\t{}\t{}\t{}\t{:.2f}".format(*s))
+
+
+
+
+    else:
+        print("[ 프로그램 종료 ]")
+        break[오전 11:42]stu_list = []
+
+while True:
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생입력")
+    print("2. 학생출력")
+    print("3. 학생성적수정")
+    print("4. 학생성적삭제")
+    print("5. 학생검색")
+    print("0. 프로그램종료")
+    print("-"*40)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    if choice == 1:
+        print("[ 학생성적입력 ]")
+        while True:
+            no = len(stu_list)+1 #
+            # no = input("번호입력 : ")
+            print("자동번호 : ",no)
+            name = input("이름입력(종료하려면 0) : ")
+            if name=="0": break
+            kor = int(input("국어입력 : "))
+            eng = int(input("영어입력 : "))
+            math = int(input("수학입력 : "))
+            total = kor+eng+math
+            avg = total/3
+            stu_list.append([no,name,kor,eng,math,total,avg])
+            print(name," 학생성적이 등록되었습니다.")
+            print()
+
+
+
+    elif choice == 2:
+        print("[ 학생성적출력 ]")
+        print("입력된 학생성적 : ",len(stu_list))
+        print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+        print("-"*60)
+        for s in stu_list:
+            print("{}\t{}\t{}\t{}\t{}\t{}\t{:.2f}".format(*s))
+
+
+
+
+    else:
+        print("[ 프로그램 종료 ]")
+        break이병호  [오전 11:47]
+stu_list = []
+
+while True:
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생입력")
+    print("2. 학생출력")
+    print("3. 학생성적수정")
+    print("4. 학생성적삭제")
+    print("5. 학생검색")
+    print("0. 프로그램종료")
+    print("-"*40)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    if choice == 1:
+        print("[ 학생성적입력 ]")
+        while True:
+            no = len(stu_list)+1 #
+            # no = input("번호입력 : ")
+            print("자동번호 : ",no)
+            name = input("이름입력(종료하려면 0) : ")
+            if name=="0": break
+            kor = int(input("국어입력 : "))
+            eng = int(input("영어입력 : "))
+            math = int(input("수학입력 : "))
+            total = kor+eng+math
+            avg = total/3
+            stu_list.append([no,name,kor,eng,math,total,avg])
+            print(name," 학생성적이 등록되었습니다.")
+            print()
+
+    elif choice == 2:
+        print("[ 학생성적출력 ]")
+        print("입력된 학생성적 : ",len(stu_list))
+        print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+        print("-"*60)
+        for s in stu_list:
+            print("{}\t{}\t{}\t{}\t{}\t{}\t{:.2f}".format(*s))
+
+    elif choice == 3:
+        print("[ 학생성적수정 ]")
+
+    elif choice == 4:
+        print("[ 학생성적삭제 ]")
+
+    elif choice == 5:
+        print("[ 학생검색 ]")
+
+
+
+    else:
+        print("[ 프로그램 종료 ]")
+        break이병호  [오후 12:55]
+# stu_list = [
+#     [1,"홍길동",100,100,100,300,100.0],
+#     [2,"유관순",100,100,100,300,100.0],
+#     [3,"이순신",100,100,100,300,100.0],
+# ][오후 1:00]stu_list = [
+    [1,"홍길동",100,90,80,270,90.0],
+    [2,"유관순",90,80,70,240,80.0],
+    [3,"이순신",80,70,60,210,70.0],
+]
+
+
+stu_list = [
+    [1,"홍길동",100,90,80,270,90.0],
+    [2,"유관순",90,80,70,240,80.0],
+    [3,"이순신",80,70,60,210,70.0],
+]
+
+while True:
+    flag = 0  #초기화
+    name = input("검색이름입력 : ")
+    for i,stu in enumerate(stu_list):
+        if name in stu:
+            stu_index = stu.index(name)
+            print("해당하는 이름이 있습니다.")
+            flag = 1
+            break
+
+    if flag == 0:
+        print("해당하는 이름이 없습니다.")
+
+
+# name_arr = ["홍길동","유관순","이순신","강감찬","김구"]
+# name = input("검색할 이름을 입력하세요.>> ")
+# # print(name_arr.index(name))
+# print(name_arr.find(name)) # 문자 find,rfind
+
+# while True:
+#     name = input("검색할 이름을 입력하세요.>> ")
+#     if name in name_arr:
+#         no = name_arr.index(name)
+#         print(no,":",name," 학생이 검색되었습니다.")
+#         change = input("변경할 이름을 입력하세요.>> ")
+#         name_arr[no] = change
+#         print(name_arr)
+#     else:
+#         print(name, "학생은 없습니다.")
+
+
+
+# stu_list = [
+#     [1,"홍길동",100,90,80,270,90.0],
+#     [2,"유관순",90,80,70,240,80.0],
+#     [3,"이순신",80,70,60,210,70.0],
+# ]
+
+# 유관순 - 국어:100, 영어:50
+#  [2,"유관순",90,80,70,240,80.0]
+# stu_list[1][2] = 100
+# stu_list[1][3] = 50
+# stu_list[1][5] = stu_list[1][2]+stu_list[1][3]+stu_list[1][4]
+# stu_list[1][6] = stu_list[1][5]/3
+# print(stu_list)
+
+# stu_list[0][1] = "홍길자"
+# print(stu_list)
+# print(stu_list[0][2],stu_list[0][3],stu_list[0][4])
+
+
+# aa = []
+# bb = []
+# value = 0
+# for i in range(0,100):
+#     aa.append(value)
+#     value += 2
+# print(aa)
+
+# cc = list(range(0,200,2))
+# print(cc)
+
+# # 리스트내포
+# dd = [i for i in range(0,200,2)]
+# print(dd)
+
+# # for i in range(0,100):
+# #     bb.append(aa[99-i])
+# # print(bb)
+# #
+# #
+# aa =[10,20,30]
+# bb = [1,2,3]
+# print(aa*3)
+# print(aa+bb)  #aa,bb가 값이 변경이 안됨.  extend
+
+# aa.extend(bb) # aa의 값이 변경됨.
+# print(aa)
+
+# a = 1
+# b = 2
+# print(a+b) # 3
+
+# aa.append(1)  # aa값이 변경
+# # append,insert,extend,pop,del
+
+# aa = [1,2,3,4,5,6,7]
+# print(aa[::-1])
+# print(aa[::-2])
+
+# aa = [1,2,3]
+# aa[1:2] = [20,30]
+# print(aa)이병호  [오후 3:21]
+import random
+a_arr = list(range(1,26))
+random.shuffle(a_arr)
+while True:
+    print(" "*15,end="")
+    print("[ 빙고게임 ]")
+    print("-"*50)
+    for i,v in enumerate(a_arr):
+        if (i+1)%5!=0:
+            print(v,end="\t")
+        else:
+            print(v)
+    print("-"*50)
+    num = int(input("원하는 번호를 입력하세요.>> "))
+    if num in a_arr:
+        idx = a_arr.index(num)
+        a_arr[idx] = "X"
+
+# 리스트 - 배열 (C 나 Java C++ 에선 배열(Array) 이라고 지칭. 최근에는 리스트로 지칭
+# a,b,c,d=0,0,0,0 # 변수 추가할 때마다 직접 입력을 해야함 
+# print(a)
+# print(b)
+# print(c)
+# print(d)
+
+# a_arr=[0,0,0,0,0]
+# for a in a_arr:
+#     print(a) # 추가할 때도 작성된 변수 모든 변수 출력 
+
+# a_arr=[10,20,30,40,50,60,70,80,90,100]
+# sum=0
+# for a in a_arr:
+#     print(a) 
+#     sum +=a 
+# print(sum)
+
+# print(a_arr[2:5])
+# print(a_arr[::-1])
+
+# 리스트 추가 : append:맨 뒤에 입력, insert:위치지정 입력, extend: 리스트+리스트
+# 리스트 수정 : a_arr[위치]=1000
+# 리스트 삭제 : pop(위치):위치가 없으면 맨 뒤에, del : 위치 
+
+# a_list=[1,2,3]
+# a_list.append(4) 
+# print(a_list)
+# a_list.pop()
+# print(a_list)
+# a_list.pop(0) # 위치 값 넣어서 삭제 
+# print(a_list)
+
+# 퀴즈
+# n_arr=[100,91,230,1,2,5,70,500]
+# # 100 이상의 숫자만 출력하시오.
+# for n in n_arr:
+#     print(n_arr)
+
+# n_arr=[100,91,230,1,2,5,70,500]
+# # 100 이상의 숫자만 출력하시오.
+# for n in n_arr:
+#     if n >= 100: 
+#         print(n)
+
+# n_arr=[100,91,230,1,2,5,70,500]
+# for n in n_arr:
+#     if n >= 100: 
+#         a_arr.append(n)
+#         print(n)
+# print(a_arr)
+
+# 100:3자리숫자 
+# 91:2자리숫자 
+# 230:3자리숫자
+# 1:1자리숫자 .... 이렇게 출력하고자 할 때 
+
+# n_arr=[100,91,230,1,2,5,70,500]
+
+# a=100
+# b="100"
+# print(int(input(len(b))))
+# print(int(input(len(b))))
+
+# n_arr=[100,91,230,1,2,5,70,500]
+# a_arr=[]
+# for n in n_arr: # 정수형 타입 -> 문자열 타입으로 변환 
+#     no=len(str(n))
+#     print(n, ":", no, "자리숫자")
+
+# n_arr=[100,91,230,1,2,5,70,500]
+# a_arr=[]
+# for n in n_arr: 
+#     no=len(str(n))
+#     a="{}:{}자리숫자".format(n,no) # format : 문자열로 변환 
+#     a_arr.append(a)
+#     print(a)
+# print(a_arr)
+
+# ['100:3자리숫자', '91:2자리숫자', '230:3자리숫자', '1:1자리숫자', '2:1자리숫자', '5:1자리숫자', '70:2자리숫자', '500:3자리숫자']
+
+# n_arr=[100,91,230,1,2,5,70,500]
+# a_arr=[]
+# for n in n_arr: 
+#     no=len(str(n))
+#     a="{}:{}자리숫자".format(n,no) # format : 문자열로 변환 
+#     a_arr.append(a)
+#     print(a)
+# print(a_arr)
+
+
+# for i in range(0,4):
+#     aa[1]=int(input(str(i+1)+"번째 숫자:"))
+#     print(aa) 
+
+
+
+# aa=[]
+# bb=[]
+# value=0
+# for i in range(0,100):
+#     aa.append(value)
+#     value+=2 
+# print(aa)
+
+# for i in range(0,100):
+#     bb.append(aa[99-1]) # 역순으로 들어감 
+# print(bb)
+
+# cc=list(range(0,200,2))
+# print(cc)
+
+# dd=[i+2 for i in range(0,200,2)] # 2부터 시작함 (i+2 로 시작하기에) 리스트 내포 
+# print(dd)
+
+# dd=[i+2 for i in range(-2,198,2)] 
+# print(dd)
+
+# dd=[i for i in range(0,200,2)] 
+# print(dd)
+
+# aa=[10,20,30]
+# print(aa*3)
+
+# aa=[10,20,30]
+# bb=[1,2,3]
+# print(aa+bb) # extend와 동일 aa와 bb가 값이 변경이 안 됨
+
+# aa.extend(bb) # aa의 값이 변경됨. 
+# print(aa)
+
+# 리스트 함수 중 append, extend, insert, pop, del 함수인 경우 값이 변경됨. 원본 수정 
+
+# a=1
+# b=2
+# print(a+b)
+
+# aa=[1,2,3,4,5,6,7]
+# print(aa[::-1])
+# print(aa[::-2])
+
+# aa=[10,20,30]
+# aa[1]=200
+# print(aa)
+
+# aa=[10,20,30]
+# aa[1:2]=[200,300]
+# print(aa) # 2의 앞에 숫자 추가 
+
+
+# stu_list=[ 
+#     [1, "홍길동", 100, 100, 100, 300, 100, 0],
+#     [2, "유관순", 100, 100, 100, 300, 100, 0],
+#     [3, "이순신", 100, 100, 100, 300, 100, 0],
+# ]
+
+# stu_list[0][1] = "홍길자" # 이름 수정 
+# print(stu_list) '
+# print(stu_list[0][2],stu_list[0][2],stu_list[0][2])
+
+
+# stu_list = [
+#     [1,"홍길동",100,90,80,270,90.0],
+#     [2,"유관순",90,80,70,240,80.0],
+#     [3,"이순신",80,70,60,210,70.0],
+# ]
+
+# # 유관순 국어점수를 100점으로 영어점수를 70점으로 수정하여 출력하시오. 점수 수정 위치 값을 입력하여 바로 수정 
+# stu_list[1][2]=100
+# stu_list[1][3]=70
+# print(stu_list) 
+
+# # 합계 및 평균 수정 
+# stu_list[1][2]=100
+# stu_list[1][3]=50
+# stu_list[1][5]=stu_list[1][2]+stu_list[1][3]+stu_list[1][4]
+# stu_list[1][6]=stu_list[1][5]/3
+# print(stu_list) 
+
+
+# name_arr=["홍길동", "유관순", "이순신" , "강감찬", "김구"]
+
+# while True: # 무한반복 
+#     name=input("검색할 이름을 입력하세요.>>")
+#     if name in name_arr:
+#         print(name, "학생이 검색되었습니다.") 
+#     else:
+#         print(name, "학생이 없습니다,") 
+
+# name_arr=["홍길동", "유관순", "이순신" , "강감찬", "김구"]
+
+# while True: # 무한반복 
+#     name=input("검색할 이름을 입력하세요.>>")
+#     if name in name_arr:
+#         no=name_arr.index(name)
+#         print(no, ":", name, "학생이 검색되었습니다.") 
+#     else:
+#         print(name, "학생이 없습니다,") 
+
+# while True: # 무한반복 
+#     name=input("검색할 이름을 입력하세요.>>")
+#     if name in name_arr:
+#         no=name_arr.index(name)
+#         print(no, ":", name, "학생이 검색되었습니다.") 
+#         change=input("변경할 이름을 입력하세요.>>") 
+#         name_arr[no]=change 
+#         print(name_arr)
+#     else:
+#         print(name, "학생이 없습니다,") 
+# 검색할 이름을 입력하세요.>>김구   
+# 4 : 김구 학생이 검색되었습니다.
+# 변경할 이름을 입력하세요.>>김유신
+# ['홍길동', '유관순', '이순신', '강감찬', '김유신']
+# 검색할 이름을 입력하세요.>>
+
+
+# name=input("검색할 이름을 입력하세요.>>")
+# print(name_arr.index(name)) # 있을 때에만 찾을 수 있고 없을 때에는 에러 남. 찾은 다음에 index를 실행해야함. 
+# rint(name_arr.find(name)) # 문자 find, rfind 
+
+# stu_list = [
+#     [1,"홍길동",100,90,80,270,90.0],
+#     [2,"유관순",90,80,70,240,80.0],
+#     [3,"이순신",80,70,60,210,70.0],
+# ]
+
+# while True: 
+#     name=input("검색 이름 입력 : ")
+#     if name in stu_list:
+#         print("있음") 
+#     else:
+#         print("없음")
+
+# stu_list = [
+#     [1,"홍길동",100,90,80,270,90.0],
+#     [2,"유관순",90,80,70,240,80.0],
+#     [3,"이순신",80,70,60,210,70.0],
+# ]
+
+# while True: 
+#     name=input("검색 이름 입력 : ")
+#     for stu in stu_list:
+#         if name in stu:
+#             print("있음") 
+#             break
+#     else:
+#         print("없음")
+
+
+# stu_list = [
+#     [1,"홍길동",100,90,80,270,90.0],
+#     [2,"유관순",90,80,70,240,80.0],
+#     [3,"이순신",80,70,60,210,70.0],
+# ]
+
+# while True: 
+#     name=input("검색 이름 입력 : ")
+#     for stu in stu_list:
+#         if name in stu:
+#             print("있음") 
+#             break
+#     else:
+#         print("해당하는 이름이 없습니다.")
+
+
+# stu_list = [
+#     [1,"홍길동",100,90,80,270,90.0],
+#     [2,"유관순",90,80,70,240,80.0],
+#     [3,"이순신",80,70,60,210,70.0],
+# ]
+
+# while True: 
+#     name=input("검색 이름 입력 : ")
+#     flag=0 # 초기화 # 없을 경우 1번만 출력하게 만드는 함수 
+#     for i, stu in enumerate(stu_list): # 인덱스부분 하나를 더 만들어서 정보 생성하게 만듬 
+#         if name in stu:
+#             stu_index=stu.index(name) # 이름에 대한 인덱스. 1번으로 출력 
+#             print("해당하는 이름이 있습니다.") 
+#             flag=1
+#             break
+#     if flag == 0:
+#         print("해당하는 이름이 없습니다.")
+
+# a_arr=[1,5,10,20,90,100,7,2]
+# a_arr.sort() # 정렬 
+# print(a_arr)
+
+# a_arr=[1,5,10,20,90,100,7,2]
+# a_arr2=[*a_arr]
+# a_arr2.sort()
+# print(a_arr)
+# print(a_arr2)
+
+# a_arr=[1,5,10,20,90,100,7,2]
+# a_arr2=[*a_arr]
+# a_arr3=a_arr.copy() # 깊은 복사. 주소값 복사 
+# a_arr2.sort()
+# print(a_arr)
+# print(a_arr2)
+# print(a_arr3)
+
+# a_arr=[1,5,10,20,90,100,7,2]
+# a_arr2=[*a_arr]
+# a_arr3=a_arr.copy()
+# a_arr2.sort()
+# a_arr2.reverse() # a_arr2.soft(reverse.True)
+# print(a_arr)
+# print(a_arr2)
+# print(a_arr3)
+
+# del list_a[1] 이름의 몇 번째 주소값 삭제 
+# remove 는 값을 넣어서 그 값을 삭제하는 방법 
+
+# aa=list(range(1,13))
+# print(aa) # 1차원 리스트 
+
+# aa=[
+#     [1,2,3,4]
+#     [5,6,7,8,]
+#     [9,10,11,12]
+# ]
+
+# a_arr=[]
+# for i in range(0,12,4):
+#     a_arr.append(aa[i:i+4])
+# print(a_arr)
+
+# aa=list(range(1,26))
+# for i in aa:
+#     if i%5!=0: 
+#         print(i,end="\t")
+#     else:
+#         print(i)
+
+# import random 
+# aa=list(range(1,26))
+# random.shuffle(aa)
+# for i, v in enumerate(aa):
+#     if i%5!=0: 
+#         print(i,end="\t")
+#     else:
+#         print(i)
+
+
+# import random 
+# aa=list(range(1,26))
+# random.shuffle(aa)
+# for i, v in enumerate(aa):
+#     if i==0: continue
+#     if i%5!=0: 
+#         print(i,end="\t")
+#     else:
+#         print(i)
+
+# import random (질문)
+# aa=list(range(1,26))
+# random.shuffle(aa)
+# for i, v in enumerate(aa):
+#     if i==0: 
+#         print(v,end="\t")
+#         continue
+#     if (i+1)%5!=0: 
+#         print(i,end="\t")
+#     else:
+#         print(i)
+
+import random
+a_arr = list(range(1,26))
+random.shuffle(a_arr)
+while True:
+    print(" "*15,end="")
+    print("[ 빙고게임 ]")
+    print("-"*50)
+    for i,v in enumerate(a_arr):
+        if (i+1)%5!=0:
+            print(v,end="\t")
+        else:
+            print(v)
+    print("-"*50)
+    num = int(input("원하는 번호를 입력하세요.>> "))
+    if num in a_arr:
+        idx = a_arr.index(num)
+        a_arr[idx] = "X"
+
+
+# number=[1,2,3,4,5,6,7,8,9,10,11,12,13] # 비교가 가능하니 숫자로 입력. (숫자와 문자는 비교가 안 됨)
+# shape=["SPADE","HEART","DIANOND","CLOVER"]
+
+# #SPADE, 1
+# #SPADE, 2
+# #....
+# # CLOVER,13....
+
+# for s in shape:
+#     for n in number:
+#         print("{},{}".format(s,n))
+
+# number=["A",2,3,4,5,6,7,8,9,10,"J","Q","K"] # J, Q, K 로 출력 
+# shape=["SPADE","HEART","DIANOND","CLOVER"]
+# for s in shape:
+#     for n in number:
+#         print("{},{}".format(s,n))
+
+# n_shape=["A",2,3,4,5,6,7,8,9,10,"J","Q","K"] # J, Q, K 로 출력 
+# number=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+# shape=["SPADE","HEART","DIANOND","CLOVER"]
+
+# for s in shape:
+#     for n in number:
+        
+#         print("{},{}".format(s,n_shape[n-1]))
+
+import random
+n_shape=["A",2,3,4,5,6,7,8,9,10,"J","Q","K"] # J, Q, K 로 출력 
+number=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+shape=["SPADE","HEART","DIANOND","CLOVER"]
+
+# [["SPADE",1]],[["SPADE,2"]]
+# card=[] 
+# # card 리스트 개수 : 52개의 리스트를 생성하시오.
+# for s in shape:
+#     for n in number:
+#         card.append([s,n]) 
+# print(card)
+
+# card=[] 
+# card.append([s,n]) 
+# for s in shape:
+#     for n in number:
+#         card.append([s,n]) 
+# random.shuffle(card)
+# print(card)
+
+# 숫자형-정수타입, 실수타입, 문자열타입, 불타입 
+# 리스트, 딕셔너리, 튜플, 세트 
+
+# aa=[1,2,3,4,5] # 리스트 대괄호 aa[0] 
+# aa2=(1,2,3,4,5) # 튜플 - 수정이 안 됨. 소괄호 aa2[0] 
+# aa3={key:value} # 딕셔너리 중괄호 
+
+
+# 딕셔너리 : key:value 로 이루어짐 (문자도 올수 있고, 숫자도 올수 있지만, 대부분 문자로 옴)
+# 딕셔너리의 장점 : 데이터를 확인하기 쉽다, 
+# dic={a:1,b:2,c:3} # 이런 식으로 문자가 key 값에는 문자로 옴
+
+# stu={"no":1, "name":"홍길동", "kor":100, "eng":100, "math":100, "music":100}
+# stu_arr=[1,"홍길동", 100, 100, 100]
+
+# # 딕셔너리 추가 : 없는 키 값 입력 
+# stu["total"]=400 
+# print(stu)
+
+# # 딕셔너리 수정 : 있는 키 값에 값을 넣으면 수정됨 
+# stu["kor"]=50
+# stu["total"]=stu["kor"]+stu["eng"]+stu["math"]
+# print(stu)
+
+# 딕셔너리 삭제 : 
+# del(stu["eng"])
+# print(stu)
+
+# stu_list = [
+#     {"no":1,"name":"홍길동","kor":100,"eng":100,"math":100,"total":400,"avg":100.0},
+#     {"no":2,"name":"유관순","kor":100,"eng":100,"math":100,"total":400,"avg":100.0},
+#     {"no":3,"name":"이순신","kor":100,"eng":100,"math":100,"total":400,"avg":100.0},
+# ]
+
+# print(stu_list[0]['no'])
+# print(stu_list[0]['name']) = "홀길자" # 있는 키 입력은 수정 
+# print(stu_list[0]['kor'])
+# print(stu_list[0]['eng'])
+# print(stu_list[0]['math'])
+# print(stu_list[0]['total'])
+# print(stu_list[0]['avg'])
+# stu_list[0]['rank']=1 # 없는 키 입력은 추가 student.get('주소) student1['주소'] get으로 할 경우 에러가 안 남. 
+
+# stu={"no":1, "name":"홍길동", "total":100}
+# print(stu.keys())
+
+# {"no":1, "name":"홍길동", "total":100}
+# print(stu.values())
+
+
+# stu={"no":1, "name":"홍길동", "total":100}
+# print(stu.keys())
+# print(stu.values())
+# s_list=list(stu.values())
+# print(s_list) # 리스트로 변환된 것
+
+# stu={"no":1, "name":"홍길동", "total":100}
+# # print(stu.items()) 
+
+# # dict 형태로 나오려면 딕셔너리를 리스트로 변환해야 dict로 출력됨 
+
+# for i,v in stu.items():
+#     print(i,v)
+
+# name_dic={
+#     "aaa":"토마토", "ddd":"바나나", "eee":"딸기", "bbb":"배"
+# }
+
+# import operator # 예전 방법 최근엔 잘 안 씀 
+# name_sort1=[]
+# name_sort1=sorted(name_dic.items(), key=lambda  x:x[0]) 
+# name_sort1=sorted(name_dic.items(), key=lambda  x:x[0], reverse=True) 
+# print(name_sort1)
+
+# name_dic = {
+#     "aaa":'토마토',"ddd":"바나나","eee":"딸기","bbb":"배"
+# }
+
+# import operator
+# name_sort1 = []
+# name_sort1 = sorted(name_dic.items(),key=operator.itemgetter(0))
+
+
+# engs = {
+#     "car":"자동차",
+#     "color":"색상",
+#     "pig":"돼지",
+#     "love":"사랑",
+#     "phone":"전화기"
+# }
+
+# for k, v in engs.items():
+#     print(k,v)
+    
+# engs = {
+#     "car":"자동차",
+#     "color":"색상",
+#     "pig":"돼지",
+#     "love":"사랑",
+#     "phone":"전화기"
+# }
+
+# for k, v in engs.items():
+#     print(k,"는(은) 한국어로 무엇일까요?")
+#     answer=input("정답 : ")
+
+# engs = {
+#     "car":"자동차",
+#     "color":"색상",
+#     "pig":"돼지",
+#     "love":"사랑",
+#     "phone":"전화기"
+# }
+
+# for k, v in engs.items():
+#     print(k,"는(은) 한국어로 무엇일까요?")
+#     answer=input("정답 : ")
+#     if answer== v:
+#         print("[정답입니다. ^^]")
+#     else:
+#         print("[오답입니다. TT]")
+
+# 세트는 중복된 정보는 하나만 출력 중복 없음 순서가 없음 
+# 세트는 읽기 나 출력만 한다
+
+# & 교집합
+# ! 합집합
+# - 차집합
+
+# 리스트 생성 방법 
+# alist=[i for i in range(1,10)] 
+# print(alist)
+# alist2=list(range(1,10))
+# print(alist2)
+# alist3=[0]*10 
+# print(alist3)
+# alist4=[1,2,3,4,5,6,7,8,9,]
+# print(alist4)
+
+
+
+
+
+
+
