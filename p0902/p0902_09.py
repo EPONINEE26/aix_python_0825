@@ -42,3 +42,4 @@ while True:
         number_func()
     else:
         cal_func()
+
