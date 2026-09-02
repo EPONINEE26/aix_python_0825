@@ -1,0 +1,1009 @@
+# 1,25까지 리스트를 생성하고
+# 랜덤으로 리스트를 섞은 다음, 5개씩 2차원리스트를 만드시오.
+import random
+alist = list(range(1,26))
+random.shuffle(alist)
+alist2 = []
+
+# alist2 = [[],[],[],[],[]]
+
+
+
+# 문자열을 3자리씩 끊어서 리스트로 저장하시오.
+# aa = "abcdefabcdefabcdefabcdefabcdef" #30
+# aa2 = [] # 3개씩 나눠서 저장하시오.
+# for i in range(0,len(aa),3):
+#     aa2.append(aa[i:i+3])  #0,1,2
+# print(aa2)
+
+
+
+# 1차원리스트를 2차원형태로 구성
+# arr = [1,2,3,4,5,6,7,8,9]  #len(arr) = 9
+# arr2 = []
+# for i in range(0,len(arr),3):
+#     arr2.append(arr[i:i+3])  #0,1,2
+# print(arr2)
+
+# arr2 = [
+#     [1,2,3],
+#     [4,5,6],
+#     [7,8,9],
+
+# 학생성적
+stu = [
+    # {"no":1,"name":"홍길동","kor":100,"eng":100,"math":100},
+    # {},
+    # {}
+]
+
+# 화면출력
+# 1. 성적입력
+# 2. 성적출력
+c_no = 1   #학생번호로 사용
+while True:
+    print("[ 학생성적프로그램 ]")
+    print("-"*60)
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("-"*60)
+    choice = int(input("원하는 번호를 입력하세요."))
+    if choice == 1:
+        print()
+        print("[ 학생성적입력 ]")
+        no = c_no
+        name = input("학생이름입력 : ")
+        kor = int(input("국어점수입력 : "))
+        eng = int(input("영어점수입력 : "))
+        math = int(input("수학점수입력 : "))
+        total = kor+eng+math
+        avg = total/3
+        stu.append(
+            {"no":no,"name":name,"kor":kor,"eng":eng\
+             ,"math":math,"total":total,"avg":avg}
+        )
+        print(name,"학생 성적이 저장되었습니다.")
+        c_no += 1   # 다음번호 1증가
+        print()
+
+    elif choice == 2:
+        print()
+        print("[ 학생성적출력 ]")
+        print("-"*60)
+        print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+        print("-"*60)
+        for s in stu:
+            print(f"{s['no']}\t{s['name']}\t{s['kor']}\
+                  \t{s['eng']}\t{s['math']}\t{s['total']}\
+                  \t{s['avg']}")
+
+        print()
+
+
+stu=[
+    # {"no":1, "name":"홍길동", "kor":100, "eng":100, "math":100} # key값은 국어로 작성해도 되나 에러날 확률이 높음. 영어로 사용하는 것이 좋음 
+    
+]
+
+# 화면 출력
+# 1. 성적입력
+# 2. 성적출력.... 이렇게 출력하게 만드시오.
+
+c_no=0 
+while True: 
+    print("[ 학생성적프로그램 ]") # tab 키 누르면 들여쓰기 가능 
+    print("-"*60)
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("-"*60)
+    choice=int(input("원하는 번호 입력하세요."))
+    if choice == 1:
+        print()
+        while True:
+            print("[ 학생성적입력 ]")
+            print("-"*60)
+            no=c_no
+            name=input("학생이름입력 (0. 이전페이지 이동):")
+            if name=="0": break
+            kor=int(input("국어점수입력:"))
+            eng=int(input("영어점수입력:"))
+            math=int(input("수학점수입력:"))
+            total=kor+eng+math
+            avg=total/3 
+            stu.append(
+                {"no":no,"name":name,"kor":kor,"eng":eng,"math":math,"total":total,"avg":avg})
+            print(name,"학생 성적이 저장되었습니다.")
+            c_no += 1 # 다음번호 1증가 
+            print()
+            
+    elif choice == 2:
+            print()
+            print("[ 학생성적출력 ]")
+            print("-"*60)
+            print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+            print("-"*60)
+            for s in stu:
+                print(f"{s['no']}\t{s['name']}\t{s['kor']}\t{s['eng']}\t{s['math']}\t{s['total']}\t{s['avg']:.2f}")
+            print() 
+			}
+
+
+
+# 메인화면출력함수
+# 학생성적입력함수
+# 학생성적출력함수 
+위의 3가지가 중요한 함수이며 구조의 메인임 
+
+
+a = [1,2,3,4,5]
+b = [10,20,30,40,50]
+c = []
+
+
+
+
+
+# 리스트 생성방법
+# a1 = [1,2,3,4,5]
+# a2 = [0]*5
+# a3 = list(range(1,6))
+# a4 = [i*i+2 for i in range(1,6) if i%2==0] #리스트내포
+# print(a4)
+
+
+# # a = ["바나나","딸기","사과","딸기","딸기","사과"]
+# aa = [1,2,3,1,1,1,2,3,1,1,1,2,2,3]
+# # print(aa.count("딸기"))
+# # {"바나나":1,"딸기":3,"사과":2}
+# aa_dic = {}
+# for a in aa:
+#     if a not in aa_dic:
+#         aa_dic[a] = 1
+#     else:
+#         aa_dic[a] = aa_dic[a]+1
+#         print("있습니다.")
+
+# print(aa_dic)
+
+# 딕셔너리
+# a_dic = {"바나나":1,"딸기":3,"사과":2}
+# print(a_dic["바나나"])  #출력
+# a_dic["배"] = 5         #추가
+# print(a_dic)
+# del a_dic["바나나"]      #삭제
+# print(a_dic)
+# a_dic["사과"] = 100      #수정
+# print(a_dic)
+
+# a = 10
+# a2 = 0
+# a2 = a
+# print(a2)
+# a = 100
+# print(a2)
+
+
+# alist = [1,2,3]
+# alist2 = []
+# alist2 = alist      # 얕은복사
+# # alist2 = [*alist] # 깊은복사
+# print(alist2)  # 1,2,3
+
+
+# alist[0] = 100
+# print(alist2)
+
+# join
+aa = "/"
+bb = aa.join(["바나나","딸기","사과"])
+print(bb)
+print(type(bb))
+
+
+
+
+# ss = "   파이썬"       #파이썬 - strip
+# ss2 = "<<<<파<<이<썬"  #파이썬 -replace
+# print(ss.strip())
+# print(ss2.replace("<",""))
+
+
+# aa = input("이름을 입력하세요.>> ").strip()
+
+# aa = [1,2,   3, 4 ,5]
+
+
+
+
+# ss = "파이썬 공부!! 열심히 합시다. 파이썬"
+# print(ss.count("공부"))
+# print(ss.count("파이썬"))
+# print(ss.find("공부"))  #4
+# print(ss.find("자바"))  #없을때 : -1
+# print(ss.index("자바")) # index는 없을때 에러
+
+
+
+
+# aa = "a/b/c/d/f/g"
+# aa_list = aa.split("/")
+# print(aa_list)
+
+# bb = "100,10,5,4,1"
+# # 모든수의 합을 구하시오.
+# bb_list = bb.split(",")
+# bb_list = [int(i) for i in bb_list]
+# sum = 0
+# for b in bb_list:
+#     sum += b
+# print(bb_list)
+# print("합계 : ",sum)
+
+# bb_list2 = [int(i) for i in bb_list]
+# print(bb_list2)
+
+
+
+
+# aa = "가나다라가가가나나다라라라라라라라"
+# ##
+# # {가:10,나:5,다:11...}
+# aa_dict = {}
+# for a in aa:
+#     if a not in aa_dict:
+#         aa_dict[a] = 1
+#     else:
+#         aa_dict[a] += 1
+
+
+# print(aa_dict)
+
+
+
+# a = [1,2,3,4,5]
+# b = [10,20,30,40,50]
+# c = []
+
+# c = list(zip(a,b))
+# d = dict(zip(a,b))
+# print(c)
+# print(d)
+
+# for i,j in zip(a,b):
+#     c.append([i,j])
+# print(c)
+
+# for i in range(len(a)):
+#     c.append([a[i],b[i]])
+# print(c)
+
+
+
+
+# 리스트 생성방법
+# a1 = [1,2,3,4,5]
+# a2 = [0]*5
+# a3 = list(range(1,6))
+# a4 = [i*i+2 for i in range(1,6) if i%2==0] #리스트내포
+# print(a4)
+
+
+# # a = ["바나나","딸기","사과","딸기","딸기","사과"]
+# aa = [1,2,3,1,1,1,2,3,1,1,1,2,2,3]
+# # print(aa.count("딸기"))
+# # {"바나나":1,"딸기":3,"사과":2}
+# aa_dic = {}
+# for a in aa:
+#     if a not in aa_dic:
+#         aa_dic[a] = 1
+#     else:
+#         aa_dic[a] = aa_dic[a]+1
+#         print("있습니다.")
+
+# print(aa_dic)
+
+# 딕셔너리
+# a_dic = {"바나나":1,"딸기":3,"사과":2}
+# print(a_dic["바나나"])  #출력
+# a_dic["배"] = 5         #추가
+# print(a_dic)
+# del a_dic["바나나"]      #삭제
+# print(a_dic)
+# a_dic["사과"] = 100      #수정
+# print(a_dic)
+
+# a = 10
+# a2 = 0
+# a2 = a
+# print(a2)
+# a = 100
+# print(a2)
+
+
+# alist = [1,2,3]
+# alist2 = []
+# alist2 = alist      # 얕은복사
+# # alist2 = [*alist] # 깊은복사
+# print(alist2)  # 1,2,3
+
+
+# alist[0] = 100
+# print(alist2)이병호  [오후 12:51]
+### 앞뒤공백제거 - strip()
+a = "      abc       "
+print(a.strip()) #공백제거 -> a반영은 안됨.
+
+### 중간공백제거 - replace()
+b = "     a      b"
+print(b.strip())
+print(b.replace(" ",""))
+
+### 분리 : split - 리스트타입으로 전달됨.
+c = "딸기,수박,바나나,사과"
+print(c)
+print(c.split(","))
+
+d = "1,홍길동,100,100,100,300,100.0"
+dlist = d.split(",")
+dlist[2] = 90
+dlist[3] = int(dlist[3])
+dlist[4] = int(dlist[4])
+dlist[5] = dlist[2]+dlist[3]+dlist[4]
+dlist[6] = dlist[5]/3
+
+dlist2 = [str(i) for i in dlist]
+print(dlist)
+
+# 특정문자로 결합 - join  "1"+1
+# 문자열리스트만 변경가능 join결합
+# 문자열로 변환됨.
+d_str = ",".join(dlist2)
+print(d_str)
+
+
+
+
+
+
+
+
+# # join
+# aa = "/"
+# bb = aa.join(["바나나","딸기","사과"])
+# print(bb)
+# print(type(bb))
+
+
+
+
+# ss = "   파이썬"       #파이썬 - strip
+# ss2 = "<<<<파<<이<썬"  #파이썬 -replace
+# print(ss.strip())
+# print(ss2.replace("<",""))
+
+
+# aa = input("이름을 입력하세요.>> ").strip()
+
+# aa = [1,2,   3, 4 ,5]
+
+
+
+
+# ss = "파이썬 공부!! 열심히 합시다. 파이썬"
+# print(ss.count("공부"))
+# print(ss.count("파이썬"))
+# print(ss.find("공부"))  #4
+# print(ss.find("자바"))  #없을때 : -1
+# print(ss.index("자바")) # index는 없을때 에러
+
+
+
+
+# aa = "a/b/c/d/f/g"
+# aa_list = aa.split("/")
+# print(aa_list)
+
+# bb = "100,10,5,4,1"
+# # 모든수의 합을 구하시오.
+# bb_list = bb.split(",")
+# bb_list = [int(i) for i in bb_list]
+# sum = 0
+# for b in bb_list:
+#     sum += b
+# print(bb_list)
+# print("합계 : ",sum)
+
+# bb_list2 = [int(i) for i in bb_list]
+# print(bb_list2)
+
+
+
+
+# aa = "가나다라가가가나나다라라라라라라라"
+# ##
+# # {가:10,나:5,다:11...}
+# aa_dict = {}
+# for a in aa:
+#     if a not in aa_dict:
+#         aa_dict[a] = 1
+#     else:
+#         aa_dict[a] += 1
+
+
+# print(aa_dict)
+
+
+
+# a = [1,2,3,4,5]
+# b = [10,20,30,40,50]
+# c = []
+
+# c = list(zip(a,b))
+# d = dict(zip(a,b))
+# print(c)
+# print(d)
+
+# for i,j in zip(a,b):
+#     c.append([i,j])
+# print(c)
+
+# for i in range(len(a)):
+#     c.append([a[i],b[i]])
+# print(c)
+
+
+# 리스트 생성방법
+# a1 = [1,2,3,4,5]
+# a2 = [0]*5
+# a3 = list(range(1,6))
+# a4 = [i*i+2 for i in range(1,6) if i%2==0] #리스트내포
+# print(a4)
+
+
+# # a = ["바나나","딸기","사과","딸기","딸기","사과"]
+# aa = [1,2,3,1,1,1,2,3,1,1,1,2,2,3]
+# # print(aa.count("딸기"))
+# # {"바나나":1,"딸기":3,"사과":2}
+# aa_dic = {}
+# for a in aa:
+#     if a not in aa_dic:
+#         aa_dic[a] = 1
+#     else:
+#         aa_dic[a] = aa_dic[a]+1
+#         print("있습니다.")
+
+# print(aa_dic)
+
+# 딕셔너리
+# a_dic = {"바나나":1,"딸기":3,"사과":2}
+# print(a_dic["바나나"])  #출력
+# a_dic["배"] = 5         #추가
+# print(a_dic)
+# del a_dic["바나나"]      #삭제
+# print(a_dic)
+# a_dic["사과"] = 100      #수정
+# print(a_dic)
+
+# a = 10
+# a2 = 0
+# a2 = a
+# print(a2)
+# a = 100
+# print(a2)
+
+
+# alist = [1,2,3]
+# alist2 = []
+# alist2 = alist      # 얕은복사
+# # alist2 = [*alist] # 깊은복사
+# print(alist2)  # 1,2,3
+
+
+# alist[0] = 100
+# print(alist2)
+
+# split 분리, *전개연산자
+str = input("날짜를 입력하세요.(2026/09/02)")
+str_arr = str.split("/")
+print("{}년 {}월 {}일".format(*str_arr))
+# 2026년 9월 2일
+
+
+
+# # map, join -> 문자열
+# stu = [1,"홍길동",100,100,100]
+# stu = list(map(str,stu))   # map 특정한 함수로 반복해줌.
+# # ,구분해서 문자열로 저장하시오.
+# stu2 = ",".join(stu)
+# print(stu2)
+
+
+
+# # map(함수,반복리스트)
+# aa = ['1','2','3']
+# print(list(map(int,aa)))
+
+
+
+
+# str = input("번호 3개를 입력하세요.(123/5/23) >> ")
+# # 3개의 합을 구해서 출력하시오.
+# strList = str.split("/")  #문자열타입
+# strList = list(map(int,strList))  #문자열->정수타입으로 변환
+# sum = 0
+# for s in strList:
+#     sum += s
+# print(sum)
+
+# 함수 
+# def 함수 이름 ():
+# 소괄호 뒤 바로 : 부분이 꼭 와야함. 
+# 함수를 쓰는 이유 : 반복적인 구문을 줄이기 위한 방법 
+
+# def fun():
+#     print("함수를 호출합니다.") # 함수 호출 방법 
+# fun()
+# fun()
+# fun()
+
+# 함수로 빼는 방법
+
+# def cal(): 
+#     num1=int(input("숫자입력 : "))
+#     num2=int(input("숫자입력 : "))
+#     print(num1+num2)
+#     print(num1-num2)
+#     print(num1*num2)
+#     print(num1/num2)
+
+# cal()
+# cal()
+# cal()
+
+
+def stu_print(): 
+    for s in stu:
+            print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(*s))
+stu=[ 
+    [1,"홍길동",100,100,100,300,100.0],
+    [2,"유관순",100,100,100,300,100.0],ㅁ
+    [3,"이순신",100,100,100,300,100.0],
+]
+
+while True:
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("3. 학생성적검색")
+
+    choice = int(input("원하는 번호를 입력하세요.>>"))
+    if choice == 1:
+        name=input("학생이름입력 (0. 이전페이지 이동):")
+        if name=="0": break
+        # 학생전체출력 
+        stu_print()
+    elif choice == 2:
+        # 학생출력하는 구문 
+        print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+        # 학생전체출력
+        stu_print()
+    else: 
+        name = input("이름을 입력하세요.")
+        # 학생전체출력 
+        stu_print() 
+
+    
+# def stu_print(): 
+#     for s in stu:
+#             print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(*s))
+# stu = [ 
+#     [1, "홍길동", 100, 100, 100, 300, 100.0],
+#     [2, "유관순", 100, 100, 100, 300, 100.0],
+#     [3, "이순신", 100, 100, 100, 300, 100.0],
+# ]
+
+# stu[0][2] = 90
+# stu[0][5] = stu[0][2] + stu[0][3] + stu[0][4]
+# stu[0][6] = stu[0][5] / 3
+
+# while True:
+#     print("1. 학생성적입력")
+#     print("2. 학생성적출력")
+#     print("3. 학생성적검색")
+
+#     choice = int(input("원하는 번호를 입력하세요.>>"))
+#     if choice == 1:
+#         name=input("학생이름입력 (0. 이전페이지 이동):")
+#         if name=="0": break
+        
+#         # 학생전체출력 
+#         stu_print()
+#     elif choice == 2:
+#         # 학생출력하는 구문 
+#         print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+#         # 학생전체출력
+#         stu_print()
+#     else: 
+#         name = input("이름을 입력하세요.")
+#         # 학생전체출력 
+#         stu_print() 
+
+    
+def stu_print(): 
+    for s in stu:
+            print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(*s))
+# 1. 기본 데이터를 100점으로 채워둡니다.
+stu = [ 
+    [1, "홍길동", 100, 100, 100, 300, 100.0],
+    [2, "유관순", 100, 100, 100, 300, 100.0],
+    [3, "이순신", 100, 100, 100, 300, 100.0],
+]
+
+# 2. 키보드로 새 점수를 입력받아 일괄 수정 및 자동 계산합니다.
+for s in stu:
+    print(f"\n=== {s[1]} 학생의 새로운 점수 입력 ===")
+    
+    # 100점이었던 자리에 사용자가 입력한 새로운 숫자가 덮어씌워집니다.
+    s[2] = int(input("변경할 국어 점수: "))
+    s[3] = int(input("변경할 영어 점수: "))
+    s[4] = int(input("변경할 수학 점수: "))
+    
+    # 새 점수를 기준으로 총점과 평균을 계산합니다.
+    s[5] = s[2] + s[3] + s[4]
+    s[6] = s[5] / 3
+
+# 3. 최종 결과 출력
+print("\n================ 수정 완료된 성적표 ================")
+for row in stu:
+    print(row)
+
+while True:
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("3. 학생성적검색")
+
+    choice = int(input("원하는 번호를 입력하세요.>>"))
+    if choice == 1:
+        name=input("학생이름입력 (0. 이전페이지 이동):")
+        if name=="0": break
+        
+        # 학생전체출력 
+        stu_print()
+    elif choice == 2:
+        # 학생출력하는 구문 
+        print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+        # 학생전체출력
+        stu_print()
+    else: 
+        name = input("이름을 입력하세요.")
+        # 학생전체출력 
+        stu_print() 
+
+    
+
+# 함수리턴
+def add(num1,num2):
+    sum = num1+num2
+    return sum   # 호출하는 곳으로 값전달
+
+while True:
+    num1 = int(input("숫자입력 : "))
+    num2 = int(input("숫자입력 : "))
+    total = add(num1,num2)
+    print("결과값 : ",total)
+
+
+# 함수는 호출하는 명령어 위에 있어야 함.
+# 함수의 매개변수 개수가 틀리면 에러
+# def print1(num1,str1):
+#     for i in range(num1):
+#         print(i+1,str1)
+
+# while True:
+#     num1 = int(input("숫자입력 : "))
+#     str1 = input("출력하려는 문구를 입력 : ")
+#     print1(num1,str1)이병호  [오후 4:19]
+def cal(num1,num2,str1):
+    result = 0
+    if str1=="+":
+        result = num1+num2
+    elif str1 == "-":
+        result = num1-num2
+    return result
+
+num1 = int(input("숫자입력 : "))
+num2 = int(input("숫자입력 : "))
+str1 = input("+,-,*,/ 중에 1개를 입력하세요.>> ")
+result = cal(num1,num2,str1)
+print("결과값 : ",result)
+
+
+# # 함수리턴
+# def add(num1,num2):
+#     sum = num1+num2
+#     return sum   # 호출하는 곳으로 값전달
+
+# while True:
+#     num1 = int(input("숫자입력 : "))
+#     num2 = int(input("숫자입력 : "))
+#     total = add(num1,num2)
+#     print("결과값 : ",total)
+
+
+# 함수는 호출하는 명령어 위에 있어야 함.
+# 함수의 매개변수 개수가 틀리면 에러
+# def print1(num1,str1):
+#     for i in range(num1):
+#         print(i+1,str1)
+
+# while True:
+#     num1 = int(input("숫자입력 : "))
+#     str1 = input("출력하려는 문구를 입력 : ")
+#     print1(num1,str1)
+
+
+# 함수리턴
+def add(num1,num2):
+    sum = num1+num2
+    return sum   # 호출하는 곳으로 값전달
+
+while True:
+    num1 = int(input("숫자입력 : "))
+    num2 = int(input("숫자입력 : "))
+    total = add(num1,num2)
+    print("결과값 : ",total)
+
+
+# 함수는 호출하는 명령어 위에 있어야 함.
+# 함수의 매개변수 개수가 틀리면 에러
+# def print1(num1,str1):
+#     for i in range(num1):
+#         print(i+1,str1)
+
+# while True:
+#     num1 = int(input("숫자입력 : "))
+#     str1 = input("출력하려는 문구를 입력 : ")
+#     print1(num1,str1)이병호  [오후 4:19]
+def cal(num1,num2,str1):
+    result = 0
+    if str1=="+":
+        result = num1+num2
+    elif str1 == "-":
+        result = num1-num2
+    return result
+
+num1 = int(input("숫자입력 : "))
+num2 = int(input("숫자입력 : "))
+str1 = input("+,-,*,/ 중에 1개를 입력하세요.>> ")
+result = cal(num1,num2,str1)
+print("결과값 : ",result)
+
+
+# # 함수리턴
+# def add(num1,num2):
+#     sum = num1+num2
+#     return sum   # 호출하는 곳으로 값전달
+
+# while True:
+#     num1 = int(input("숫자입력 : "))
+#     num2 = int(input("숫자입력 : "))
+#     total = add(num1,num2)
+#     print("결과값 : ",total)
+
+
+# 함수는 호출하는 명령어 위에 있어야 함.
+# 함수의 매개변수 개수가 틀리면 에러
+# def print1(num1,str1):
+#     for i in range(num1):
+#         print(i+1,str1)
+
+# while True:
+#     num1 = int(input("숫자입력 : "))
+#     str1 = input("출력하려는 문구를 입력 : ")
+#     print1(num1,str1)
+
+
+
+
+
+# imprort random 
+
+# def ran_number(choice): 
+#     if choice == 1 :
+#         # 랜덤 숫자 5개 
+#         random.sample(1, 101, 5)
+#     elif choice == 2:     
+#         # 랜덤 숫자 3개 
+#         random.sample(1, 101, 3) 
+#     else:
+#         # 랜덤숫자 1개 
+#         random.sample(1, 101, 1) 
+
+
+# # 시작 위치 
+# while True:
+#     print("1. 랜덤숫자 5개 가져오기")
+#     print("2. 랜덤숫자 3개 가져오기")
+#     print("3. 랜덤숫자 1개 가져오기")
+#     choice = int(input("원하는 번호를 입력하세요.>>"))
+#     ran_number(choice) 
+
+
+# imprort random 
+
+# def ran_number(choice): 
+#     if choice == 1 :
+#         # 랜덤 숫자 5개 
+#         result = random.sample(range(1, 101), 5)
+#     elif choice == 2:     
+#         # 랜덤 숫자 3개 
+#         result = random.sample(range(1, 101),3)
+#     else:
+#         # 랜덤숫자 1개 
+#         result = random.sample(range(1, 101),1) 
+
+# # 시작 위치 
+# while True:
+#     print("1. 랜덤숫자 5개 가져오기")
+#     print("2. 랜덤숫자 3개 가져오기")
+#     print("3. 랜덤숫자 1개 가져오기")
+#     choice = int(input("원하는 번호를 입력하세요.>>"))
+#     ran_number(choice) 
+#     result = ran_number (choice)
+#     print("결과 값 :", result) 
+
+
+
+# 함수사용이유
+# 1. 중복되는 코드를 재 사용하기 위해
+# 2. 코드를 간결하게 하기 위해 
+
+from func import * # 코드 재 사용 함수 
+
+# 프로그램 시작-------------------------------------->  
+while True:
+    choice = main_print()
+    result = ran_number (choice)
+    print("결과 값 :", result) 
+
+import random 
+def main_print():
+    print("1. 랜덤숫자 5개 가져오기")
+    print("2. 랜덤숫자 3개 가져오기")
+    print("3. 랜덤숫자 1개 가져오기")
+    choice = int(input("원하는 번호를 입력하세요."))
+    return choice
+
+def ran_number(choice): 
+    if choice == 1 :
+        # 랜덤 숫자 5개 
+        result = random.sample(range(1, 101), 5)
+    elif choice == 2:     
+        # 랜덤 숫자 3개 
+        result = random.sample(range(1, 101), 3)
+    else:
+        # 랜덤숫자 1개 
+        result = random.sample(range(1, 101), 1) 
+    return result    
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
