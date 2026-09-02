@@ -19,6 +19,7 @@
 # print("정답 번호 :  ", answer_arr)
 # print("정답 개수 : ", len(answer_arr))
 
+<<<<<<< HEAD
 # import random
 
 # num1 = random.randint(1, 100)
@@ -32,12 +33,26 @@
 # print(arr2)
 
 # input1 = int(input("숫자 입력:"))
+=======
+
+# import random
+# num1=random.randint(1,100)
+# num2=random.randint(1,100)
+# num3=random.randint(1,100)
+
+# arr1=[num1, num2, num3]
+# arr2=random.sample(range(1,101),3)
+# arr1.sort()
+
+# input1=int(input("숫자 입력:"))
+>>>>>>> 3c50aa7284a5131eedf8dbfe54e4f8b93f45184e
 
 # if input1 in arr1:
 #     print("당첨!!")
 # else:
 #     print("꽝 ^^")
 
+<<<<<<< HEAD
 # # ★ 검사 대상에 맞게 출력 화면도 arr1(당첨번호)로 매칭했습니다!
 # print("랜덤숫자:", arr1)
 # print("입력숫자:", input1)
@@ -62,6 +77,11 @@
 
 
 
+=======
+# print("랜덤숫자:", arr2)
+# print("입력숫자:", input1)
+
+>>>>>>> 3c50aa7284a5131eedf8dbfe54e4f8b93f45184e
 # import random
 
 # ran1 = random.randint(1, 100)  # 1~100 사이이므로 101 대신 100으로 수정 (선택사항)
@@ -147,6 +167,7 @@
 #         # 학생전체출력 
 #         stu_print() 
 
+<<<<<<< HEAD
 
 
 # from gugudan_01 import gugudan_func
@@ -212,3 +233,6 @@
 
 
 
+=======
+ 
+>>>>>>> 3c50aa7284a5131eedf8dbfe54e4f8b93f45184e

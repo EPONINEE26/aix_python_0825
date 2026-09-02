@@ -382,6 +382,7 @@ print(d_str)
 # print(ss2.replace("<",""))
 
 
+<<<<<<< HEAD
 
 
 # 1차원 리스트를 2차원 형태로 구성하는 방법 
@@ -683,6 +684,8 @@ print(d_str)
 
 
 
+=======
+>>>>>>> 3c50aa7284a5131eedf8dbfe54e4f8b93f45184e
 # aa = input("이름을 입력하세요.>> ").strip()
 
 # aa = [1,2,   3, 4 ,5]

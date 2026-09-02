@@ -6,8 +6,11 @@
 #     arr2.append(arr[i:i+3]) #0,1,2
 # print(arr2)
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3c50aa7284a5131eedf8dbfe54e4f8b93f45184e
 # 문자열을 3자리씩 끊어서 리스트로 저장하시오.
 
 # aa="abcdefabcdefabcdefabcdefabcdef" # 30
@@ -29,6 +32,10 @@
 #     alist2.append(alist[i:i+3])
 # print(alist2)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c50aa7284a5131eedf8dbfe54e4f8b93f45184e
 # import random
 # alist=list(range(1,26))
 # print(alist)
@@ -43,6 +50,7 @@
 # print(alist2)
 
 
+<<<<<<< HEAD
 # import random
 # alist=list(range(1,26))
 # for i in range(len(alist)):
@@ -74,6 +82,20 @@
 #         print(alist[i], end="\t")
 
         
+=======
+import random
+alist=list(range(1,26))
+for i in range(len(alist)):
+    if (i+1)%5==0:
+        print(alist[i], end="\t")
+    else:
+        print(alist[i])
+print(alist)
+
+
+
+
+>>>>>>> 3c50aa7284a5131eedf8dbfe54e4f8b93f45184e
 
 
 
