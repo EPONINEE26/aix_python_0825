@@ -39,46 +39,31 @@
 # print("랜덤숫자:", arr2)
 # print("입력숫자:", input1)
 
-import random
+# import random
 
-ran1 = random.randint(1, 100)  # 1~100 사이이므로 101 대신 100으로 수정 (선택사항)
-my_list = []
-myNum = 0
-answer = ran1  # 정답 숫자를 ran1으로 저장하여 하단에 출력되도록 수정
+# ran1 = random.randint(1, 100)  # 1~100 사이이므로 101 대신 100으로 수정 (선택사항)
+# my_list = []
+# myNum = 0
+# answer = ran1  # 정답 숫자를 ran1으로 저장하여 하단에 출력되도록 수정
 
-while True:
-    myNum = int(input("1~100 사이 숫자 입력 : "))
-    my_list.append(myNum)
-    print(myNum)
+# while True:
+#     myNum = int(input("1~100 사이 숫자 입력 : "))
+#     my_list.append(myNum)
+#     print(myNum)
     
-    if myNum == ran1:
-        print("정답입니다.")
-        break  # 정답을 맞췄을 때만 반복문을 빠져나갑니다.
-    elif myNum > ran1:
-        print("랜덤숫자보다 큽니다. 작은 수 입력 : ")
-    else:
-        print("랜덤숫자보다 작습니다. 큰 수 입력 : ")
+#     if myNum == ran1:
+#         print("정답입니다.")
+#         break  # 정답을 맞췄을 때만 반복문을 빠져나갑니다.
+#     elif myNum > ran1:
+#         print("랜덤숫자보다 큽니다. 작은 수 입력 : ")
+#     else:
+#         print("랜덤숫자보다 작습니다. 큰 수 입력 : ")
 
-# 반복문 종료 후 최종 결과 출력
-print("내가 입력한 마지막 숫자 : ", myNum)
-print("정답숫자 : ", answer)
-print("입력한 모든 숫자 목록 : ", my_list)
+# # 반복문 종료 후 최종 결과 출력
+# print("내가 입력한 마지막 숫자 : ", myNum)
+# print("정답숫자 : ", answer)
+# print("입력한 모든 숫자 목록 : ", my_list)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 # import random
 # ran1=random.randint(1,101)
 # my_list=[]
@@ -104,3 +89,39 @@ print("입력한 모든 숫자 목록 : ", my_list)
 # print("입력숫자 : ", my_list)
 
 
+# def stu_print(): 
+#     for s in stu:
+#             print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(*s))
+# stu = [ 
+#     [1, "홍길동", 100, 100, 100, 300, 100.0],
+#     [2, "유관순", 100, 100, 100, 300, 100.0],
+#     [3, "이순신", 100, 100, 100, 300, 100.0],
+# ]
+
+# stu[0][2] = 90
+# stu[0][5] = stu[0][2] + stu[0][3] + stu[0][4]
+# stu[0][6] = stu[0][5] / 3
+
+# while True:
+#     print("1. 학생성적입력")
+#     print("2. 학생성적출력")
+#     print("3. 학생성적검색")
+
+#     choice = int(input("원하는 번호를 입력하세요.>>"))
+#     if choice == 1:
+#         name=input("학생이름입력 (0. 이전페이지 이동):")
+#         if name=="0": break
+        
+#         # 학생전체출력 
+#         stu_print()
+#     elif choice == 2:
+#         # 학생출력하는 구문 
+#         print("번호\t이름\t국어\t영어\t수학\t합계\t평균")
+#         # 학생전체출력
+#         stu_print()
+#     else: 
+#         name = input("이름을 입력하세요.")
+#         # 학생전체출력 
+#         stu_print() 
+
+ 

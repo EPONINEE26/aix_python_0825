@@ -3,8 +3,6 @@
 #     for j in range(1,10):
 #         print("{}x{}={}".format(i,j,i*j))
 
-<<<<<<< HEAD
-=======
 # for step in range(2, 10, 3):
 #     # 1. 상단 단 이름 출력 (3개씩)
 #     for i in range(step, min(step + 3, 10)): 
@@ -30,7 +28,6 @@
 
 #     print()
 
->>>>>>> 08ccb3fef8e16c2bf7b720b12dfcc19563907f7f
 # 1-100 사이의 맞추기 
 # 1. 랜덤번호 생성
 # 2. 무한으로 입력받기 

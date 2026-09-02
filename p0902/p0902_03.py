@@ -33,9 +33,25 @@
 #  전개 연산자 split 분리 
 # str = input("닐짜를 입력하세요.")
 # 2026년 9월 2일 
-# str_arr = str.split("/")
+# str_arr = str.split("/") # split 기준으로 분리 
 # print("{}년 {}월 {}일".format(*str_arr))
 
+# str_input = input("날짜를 입력하세요 >> ")
+# str_arr = str_input.split("/")
+# int_arr = [int(num) for num in str_arr]
+# print("{}년 {:02d}월 {:02d}일".format(*int_arr)) # 2026년/09월/02일 
+
+# isdigit : 숫자인지 확인  
+while True:
+    a=input("숫자를 입력하세요.") # 숫자가 아닌 영문자를 입력할 때 에러가 안 나게 하는 방법 
+    if a.isdigit():
+        a=int(a)
+        break 
+    else:
+        print("숫자가 아닙니다. 다시 입력하세요.")
+print(a) 
+# isalpha 영문자인지 확인 
+# isalnum 영문자 와 숫자인지 확인 
 
 
 
