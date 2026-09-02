@@ -40,27 +40,30 @@
 # print("입력숫자:", input1)
 
 import random
-ran1=random.randint(1,101)
-my_list=[]
-myNum=0
-answer=0
+
+ran1 = random.randint(1, 100)  # 1~100 사이이므로 101 대신 100으로 수정 (선택사항)
+my_list = []
+myNum = 0
+answer = ran1  # 정답 숫자를 ran1으로 저장하여 하단에 출력되도록 수정
 
 while True:
-    myNum=int(input("1~100 사이 숫자 입력 : "))
+    myNum = int(input("1~100 사이 숫자 입력 : "))
     my_list.append(myNum)
     print(myNum)
+    
     if myNum == ran1:
-            answer=myNum
-            print("정답입니다.")
+        print("정답입니다.")
+        break  # 정답을 맞췄을 때만 반복문을 빠져나갑니다.
     elif myNum > ran1:
         print("랜덤숫자보다 큽니다. 작은 수 입력 : ")
     else:
-        print("랜덤숫자보다 작습니다. 큰 수 입력 :")
-        break
+        print("랜덤숫자보다 작습니다. 큰 수 입력 : ")
 
-print("랜덤숫자 : ", myNum)
+# 반복문 종료 후 최종 결과 출력
+print("내가 입력한 마지막 숫자 : ", myNum)
 print("정답숫자 : ", answer)
-print("입력숫자 : ", my_list)
+print("입력한 모든 숫자 목록 : ", my_list)
+
 
     
 # import random
