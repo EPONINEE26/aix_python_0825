@@ -65,6 +65,19 @@ print("정답숫자 : ", answer)
 print("입력한 모든 숫자 목록 : ", my_list)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 # import random
 # ran1=random.randint(1,101)

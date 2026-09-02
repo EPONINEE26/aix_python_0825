@@ -115,22 +115,167 @@
 
 # zip 함수 : 동시에 여러 개 리스트에 접근하여 합침 
 
-a=[1,2,3,4,5]
-b=[10,20,30,40,50]
-c=[]
+# a=[1,2,3,4,5]
+# b=[10,20,30,40,50]
+# c=[]
 
-for i in a:
-    for j in b: 
+# for i in range(len(a)):
+#     c.append([a[i], b[i]])
+# print(c)
+
+# a=[1,2,3,4,5]
+# b=[10,20,30,40,50]
+# c=[]
+
+# for i,j in zip(a,b): # 두 개 및 여러 개 돌릴때 zip 사용 
+#     c.append([i,j])    
+# print(c)
+
+# a=[1,2,3,4,5]
+# b=[10,20,30,40,50]
+# c=[]
+
+# c=list(zip(a,b)) # 두 개 및 여러 개 돌릴때 zip 사용 
+# print(c)
+
+# a=[1,2,3,4,5]
+# b=[10,20,30,40,50]
+# c=[]
+
+# c=list(zip(a,b)) 
+# dic=dict(zip(a,b)) # a가 key 값이 되고 b가 valuse 값이 됨 
+# print(c)
+
+# 대괄호로 되어있음 수정이 가능하나 소괄호로 되어있음 수정이 불가
+# 튜플 소괄호로 구성 
+
+# FIFO (first In, first Out) / LIFO (Last In, First Out)
+# Stack : 한 쪽 끝이 막혀 먼저 들어간 것이 가장 나중에 나오는 형태의 구조 
+
+# result=sorted(students, key=itemgetter('age'))
+
+aa = "가나다라가가가나나다라라라라라라라"
+# {가:10, 나:5, 디:11....} 이런식으로 나오게 출력하시오.
+
+# aa_dic ={}
+# for a in aa:
+#     aa_dic[a]=0
+# print(aa_dic)
+
+# aa_dic ={}
+# for a in aa:
+#     if a not in aa_dic:
+#         aa_dic[a]=1
+#     else:
+#         aa_dic[a]=aa_dic[a]+1
+# print(aa_dic)
+
+# aa="a/b/c/d/f/g" 
+# # 리스트 타입으로 변경하시오.
+# aa_list=aa.split("/")
+# print(aa_list)
+
+# bb="100, 10,5,4,1"
+# 모든 수의 합을 구하시오.
+
+# bb_list=bb.split(",") # 문자열을 나누어서 리스트로 변경
+# print(bb_list)
+
+# bb="100, 10,5,4,1"
+# bb_list=bb.split(",")
+# bb_list2=[int(i) for i in bb_list] # int로 변경하여 리스트에 들어감 
+# sum=0
+# for b in bb_list:
+#     sum = sum += b
+# print(bb_list)
+# print("합계 : ", sum)
 
 
+ss="파이썬 공부!!! 열심히 합시다. 파이썬" 
+# print (ss.count("공부")) 
+# print (ss.count("파이썬")) 
 
+# print (ss.find("공부")) 
+# print (ss.find("파이썬")) 
+# print (ss.find("자바")) # find는 없을 때 -1 
+# print (ss.index("자바")) # index 는 없을 때 에러 
 
+# print(ss.startwith("파이썬"))
+# print(ss.startwith("파이썬", 10))
+# print(ss.endwith('^^'))
 
+# aa=input("이름을 입력하세요.>>")
+# print(aa.split(","))
 
+# 1. 앞뒤공백제거 - strip()
+# a="      abc     "
+# print(a)
+# print(a.strip()) # 공백제거 -> a값은 반연은 안됨. 그러나 글자 사이의 공백은 처리 안 됨. 글자 사이는 replace로 변환 
 
+# 2. 중간공백제거 - replace 
+# aa = "[1,2,  3, 4,5]"
+# aa = aa.replace(" ", "")
+# print(aa.split(","))
 
+# aa = "[1,2,  3, 4,5]"
+# print(aa.replace(" ",""))
 
+# 3. 분리 - split - 리스트타입으로 전달됨 
+# aa="딸기, 수박, 바나나, 사과"
+# print(aa)
+# print(aa.split(","))
+# print(aa.split("/"))
 
+# ss="    파이썬"
+# ss2="<<<<파<<이<썬"
+# print(ss.strip())
+# print(ss2.replace("<", "")) 
+
+# 4. join
+# aa="/"
+# bb=aa.join(["바나나", "딸기", "사과"])
+# print(bb)
+# print(type(bb))
+
+# d="1, 홍길동, 100, 100, 100, 300, 100.0"
+# dlist=d.split(",")
+# dlist[2]=90 
+# print(dlist)
+
+# 문자열을 숫자타입으로 변경 
+# d="1, 홍길동, 100, 100, 100, 300, 100.0" 
+# dlist=d.split(",")
+# dlist[2]=90 
+# dlist[3]=int(dlist[3])
+# dlist[4]=int(dlist[4])
+# dlist[5]=int(dlist[2]+dlist[3]+dlist[4])
+# dlist[6]=int(dlist[5]/3)
+# print(dlist)
+
+# 특정문자로 결합 - join
+# 문자열 리스트만 변경 가능 join (결합)
+# test=["1","2", "3"]
+# d_str=",".join(dlist) # 에러 명령문 
+# print(d_str)
+
+# d="1, 홍길동, 100, 100, 100, 300, 100.0" 
+# dlist=d.split(",")
+# dlist[2]=90 
+# dlist[3]=int(dlist[3])
+# dlist[4]=int(dlist[4])
+# dlist[5]=int(dlist[2]+dlist[3]+dlist[4])
+# dlist[6]=int(dlist[5]/3)
+
+# dlist2=[str(i) for i in dlist]
+# print(dlist)
+
+# test=["1","2", "3"]
+# d_str=",".join(dlist2) 
+# print(d_str)
+
+# 5. count : 문자열 안에 해당문자가 몇 개 있는지 확인
+# 6. find : 문자열 안에 해당문자 위치 변환, 없으면 -1
+# 7. index : find와 동일, 없으면 에러 
 
 
 
