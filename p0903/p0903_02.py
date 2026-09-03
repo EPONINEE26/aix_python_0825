@@ -11,6 +11,7 @@ print("2. 세탁기-2,000,000")
 print("3. 오디오 -500,000")
 choice=input("원하는 번호와 개수를 입력 (1/3)")
 
+
 # def production_func(n1,n2,n3):
 #     choice2=choice.split("/") # str 타입 
 #     if choice2[0]=="1": #문자열 비교 

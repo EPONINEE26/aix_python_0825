@@ -9,6 +9,7 @@
 # choice=int(input("원하는 번호를 입력하세요.>>"))
 
 
+
 # def cal1():
 #     for step in range(2, 10, 3): 
 #         for i in range(step, min(step + 3, 10)):
