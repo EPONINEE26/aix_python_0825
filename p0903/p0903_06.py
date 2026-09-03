@@ -91,3 +91,4 @@ while True:
             print(f"m보너스포인트 : {my_info['bonusPoint']:,}포인트")
     else:
         pass
+
