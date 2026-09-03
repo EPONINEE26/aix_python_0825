@@ -77,7 +77,21 @@ while True:
             math=int(input("수학점수 입력:"))
             total=kor+eng+math
             avg=total/3 
-            stu.append("no": no, "name": name, "kor": kor, "eng": eng )
+            stu.append({"no":no,"name":name,"kor":kor,"eng":eng,"math":math,"total":total,"avg":avg})
+            c_no+1
+            print()
+    elif choice ==2:
+        print()
+        print("[ 학생성적출력 ]")
+        print("-"*60)
+        for s in stu:
+            print(f"{s['no']}\t{s['name']}\t{s['kor']}\t{s['eng']}\t{s['math']}\t{s['total']}\t{s['avg']:.2f}")
+            print()
+
+                        
+
+
+
 
 
 c_no=1 # 학생번호로 사용 
