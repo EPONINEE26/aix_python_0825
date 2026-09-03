@@ -1,6 +1,3 @@
-
-
-
 # imprort random 
 
 # def ran_number(choice): 

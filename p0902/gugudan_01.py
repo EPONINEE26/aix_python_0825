@@ -4,3 +4,7 @@ def gugudan_func():
             print(f"{i}x{j}={i*j}")
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 3c50aa7284a5131eedf8dbfe54e4f8b93f45184e

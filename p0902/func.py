@@ -18,7 +18,7 @@ def ran_number(choice):
         result = random.sample(range(1, 101), 1) 
     return result    
     
-
+  
 
     
 
