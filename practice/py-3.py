@@ -23,7 +23,6 @@ while True:
                 print("2. 냉장고")
                 print("3. 오디오")
                 print("4. 세탁기") 
-
                 
 
                 for i,v in enumerate(s_arr): 
