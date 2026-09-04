@@ -175,7 +175,29 @@ k_title = ["no", "name", "kor", "eng", "math", "total", "avg"]
 stu = []
 sno = 1 
 
-메인화면함수선언 -------------------------------------------------
+# 파일불러오기
+# ------------------------------------------------------------------
+f = open("C:/aaa/test2.txt","r",encoding="utf-8")
+while True:
+    line = f.readline() # /n 줄바꿈때문에 에러가 남.
+    if line=="": break
+    line = line.strip()
+    arr = line.split(",")
+
+    for i,a in enumerate(arr):
+        if 5>=i>=2:
+            arr[i] = int(a)
+        elif i==6:
+            arr[i] = float(a)
+    # stu 리스트에 저장
+    # print(arr)
+    stu.append({'no':arr[0],'name':arr[1],'kor':arr[2],'eng':arr[3],'math':arr[4],'total':arr[5],'avg':arr[6]})
+
+
+f.close()
+print(stu)
+# --------------------------------------------------------------------
+# 메인화면함수선언 ------------------------------------------------------
 def s_mainPrint(): # 메인화면함수 
     print("[ 학생성적프로그램 ]")
     print("1. 학생성적입력")

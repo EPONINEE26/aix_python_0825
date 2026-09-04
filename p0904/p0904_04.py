@@ -1,3 +1,4 @@
+# 파일 읽어오기
 stu = []
 f = open("C:/aaa/test2.txt","r",encoding="utf-8")
 while True:
