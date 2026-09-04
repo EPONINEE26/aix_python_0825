@@ -1,0 +1,538 @@
+title = ["번호",'이름','국어','영어','수학','합계','평균']
+stu = []
+sno = 1 #학생성적인원변수 - db
+
+while True:
+    # 메인화면부분
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("-"*60)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    print()
+
+    if choice == 1: # 학생성적입력부분
+        while True: #입력을 멈추고 싶을때까지 입력받음
+            no = sno
+            print("[ 학생성적입력 ]")
+            name = input(f"{no}번째 이름입력 (0.이전화면이동) : ")
+            if name == "0": break
+            # kor = int(input("국어점수입력 : "))
+            # eng = int(input("영어점수입력 : "))
+            # math = int(input("수학점수입력 : "))
+
+            score = [0]*3
+            for i in range(3):
+                score[i] = int(input(f"{title[i+2]} 점수입력 : "))
+
+
+            sno += 1이병호  [오전 10:22]
+title = ["번호",'이름','국어','영어','수학','합계','평균']
+stu = []
+sno = 1 #학생성적인원변수 - db
+
+# 함수선언 ------------------------------------
+def s_mainPrint():
+    # 메인화면부분
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("-"*60)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    print()
+    return choice
+
+# 학생성적입력함수선언
+def s_input(sno):
+    while True: #입력을 멈추고 싶을때까지 입력받음
+        no = sno
+        print("[ 학생성적입력 ]")
+        name = input(f"{no}번째 이름입력 (0.이전화면이동) : ")
+        if name == "0": break
+        kor = int(input("국어점수입력 : "))
+        eng = int(input("영어점수입력 : "))
+        math = int(input("수학점수입력 : "))
+        total = kor+eng+math
+        avg = total/3
+
+        # 리스트저장 - 파일저장 - db저장
+        stu.append({'no':no,'name':name,'kor':kor,\
+                    'eng':eng,'math':math,'total':total,\
+                        'avg':avg})
+        print(f"{name} 학생성적이 저장되었습니다.")
+        print()
+        # score = [0]*3
+        # for i in range(3):
+        #     score[i] = int(input(f"{title[i+2]} 점수입력 : "))
+        sno += 1
+    return sno
+
+#----------------------------------------------------
+while True:
+    choice = s_mainPrint()  # 메인화면부분 함수호출
+    if choice == 1: # 학생성적입력부분
+       sno = s_input(sno)이병호  [오전 10:45]
+print()
+        print("[ 학생성적출력 ]")
+        print("-"*60)
+        print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(*title))
+        print("-"*60)
+        for s in stu:
+            print(f"{s['no']}\t{s['name']}\t{s['kor']}\t{s['eng']}\t{s['math']}\t{s['total']}\t{s['avg']}")
+
+        print()이병호  [오전 11:21]
+title = ["번호",'이름','국어','영어','수학','합계','평균']
+stu = []
+sno = 1 #학생성적인원변수 - db
+
+# 함수선언 ------------------------------------
+def s_mainPrint():
+    # 메인화면부분
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("3. 학생성적수정")
+    print("-"*60)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    print()
+    return choice
+
+# 학생성적입력함수선언
+def s_input():
+    global sno
+    while True: #입력을 멈추고 싶을때까지 입력받음
+        no = sno
+        print("[ 학생성적입력 ]")
+        name = input(f"{no}번째 이름입력 (0.이전화면이동) : ")
+        if name == "0": break
+        kor = int(input("국어점수입력 : "))
+        eng = int(input("영어점수입력 : "))
+        math = int(input("수학점수입력 : "))
+        total = kor+eng+math
+        avg = total/3
+
+        # 리스트저장 - 파일저장 - db저장
+        stu.append({'no':no,'name':name,'kor':kor,\
+                    'eng':eng,'math':math,'total':total,\
+                        'avg':avg})
+        print(f"{name} 학생성적이 저장되었습니다.")
+        print()
+        # score = [0]*3
+        # for i in range(3):
+        #     score[i] = int(input(f"{title[i+2]} 점수입력 : "))
+        sno += 1
+        s_output()
+
+def s_output(): # 학생성적출력부분 함수
+    print()
+    print("[ 학생성적출력 ]")
+    print("-"*60)
+    print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(*title))
+    print("-"*60)
+    if len(stu)==0:
+        print("*** 학생데이터가 없습니다. ***")
+    else:
+        for s in stu:
+            print(f"{s['no']}\t{s['name']}\t{s['kor']}\t{s['eng']}\t{s['math']}\t{s['total']}\t{s['avg']:.2f}")
+    print()
+
+
+#----------------------------------------------------
+# 실제프로그램 시작부분
+#----------------------------------------------------
+while True:
+    choice = s_mainPrint()  # 메인화면부분 함수호출
+    if choice == 1:   # 학생성적입력부분
+       s_input()
+
+    elif choice == 2: # 학생성적출력부분
+       s_output()
+    elif choice == 3: # 학생성적수정부분
+        print()
+        print("[ 학생성적수정 ]")
+        name = input("찾을려는 학생이름을 입력하세요.>> ")
+        temp = 0
+        for i,s in enumerate(stu):
+            if s['name']==name:
+                print(f"{name} 학생을 찾았습니다.")
+                temp = 1
+                break
+
+        if temp == 0:
+            print(f"{name} 학생이 없습니다.")
+        elif temp == 1:
+            print("[ 과목수정선택 ]")
+            print("1. 국어   2. 영어   3. 수학")
+            choice = int(input("원하는 번호입력 : "))
+            if choice == 1:
+                pass
+            elif choice == 2:
+                pass
+            elif choice == 3:
+                pass이병호  [오전 11:48]
+title = ["번호",'이름','국어','영어','수학','합계','평균']
+k_title = ["no",'name','kor','eng','math','total','avg']
+stu = []
+sno = 1 #학생성적인원변수 - db
+
+# 함수선언 ------------------------------------
+def s_mainPrint():
+    # 메인화면부분
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("3. 학생성적수정")
+    print("-"*60)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    print()
+    return choice
+
+# 학생성적입력함수선언
+def s_input():
+    global sno
+    while True: #입력을 멈추고 싶을때까지 입력받음
+        no = sno
+        print("[ 학생성적입력 ]")
+        name = input(f"{no}번째 이름입력 (0.이전화면이동) : ")
+        if name == "0": break
+        kor = int(input("국어점수입력 : "))
+        eng = int(input("영어점수입력 : "))
+        math = int(input("수학점수입력 : "))
+        total = kor+eng+math
+        avg = total/3
+
+        # 리스트저장 - 파일저장 - db저장
+        stu.append({'no':no,'name':name,'kor':kor,\
+                    'eng':eng,'math':math,'total':total,\
+                        'avg':avg})
+        print(f"{name} 학생성적이 저장되었습니다.")
+        print()
+        # score = [0]*3
+        # for i in range(3):
+        #     score[i] = int(input(f"{title[i+2]} 점수입력 : "))
+        sno += 1
+        s_output()
+
+def s_output(): # 학생성적출력부분 함수
+    print()
+    print("[ 학생성적출력 ]")
+    print("-"*60)
+    print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(*title))
+    print("-"*60)
+    if len(stu)==0:
+        print("*** 학생데이터가 없습니다. ***")
+    else:
+        for s in stu:
+            print(f"{s['no']}\t{s['name']}\t{s['kor']}\t{s['eng']}\t{s['math']}\t{s['total']}\t{s['avg']:.2f}")
+    print()
+
+
+#----------------------------------------------------
+# 실제프로그램 시작부분
+#----------------------------------------------------
+while True:
+    choice = s_mainPrint()  # 메인화면부분 함수호출
+    if choice == 1:   # 학생성적입력부분
+       s_input()
+
+    elif choice == 2: # 학생성적출력부분
+       s_output()
+    elif choice == 3: # 학생성적수정부분
+        print()
+        print("[ 학생성적수정 ]")
+        name = input("찾을려는 학생이름을 입력하세요.>> ")
+        temp = 0
+        for i,s in enumerate(stu):
+            if s['name']==name:
+                print(f"{name} 학생을 찾았습니다.")
+                temp = 1
+                break
+
+        if temp == 0:
+            print(f"{name} 학생이 없습니다.")
+        elif temp == 1:
+            print("[ 과목수정선택 ]")
+            print("1. 국어   2. 영어   3. 수학")
+            choice = int(input("원하는 번호입력 : "))
+
+            print(f"현재{title[choice+1]}점수 : {s[k_title[choice+1]]}")
+            s[k_title[choice+1]] = int(input(f"변경하려는 {title[choice+1]}점수 : "))
+            s['total'] = s['kor']+s['eng']+s['math']
+            s['avg'] = s['total']/3
+            print(f"{s[k_title[choice+1]]}점으로 {title[choice+1]}점수가 변경되었습니다.")[오전 11:50]title = ["번호",'이름','국어','영어','수학','합계','평균']
+k_title = ["no",'name','kor','eng','math','total','avg']
+stu = []
+sno = 1 #학생성적인원변수 - db
+
+# 함수선언 ------------------------------------
+def s_mainPrint():
+    # 메인화면부분
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("3. 학생성적수정")
+    print("-"*60)
+    choice = int(input("원하는 번호를 입력하세요.>> "))
+    print()
+    return choice
+
+# 학생성적입력함수선언
+def s_input():
+    global sno
+    while True: #입력을 멈추고 싶을때까지 입력받음
+        no = sno
+        print("[ 학생성적입력 ]")
+        name = input(f"{no}번째 이름입력 (0.이전화면이동) : ")
+        if name == "0": break
+        kor = int(input("국어점수입력 : "))
+        eng = int(input("영어점수입력 : "))
+        math = int(input("수학점수입력 : "))
+        total = kor+eng+math
+        avg = total/3
+
+        # 리스트저장 - 파일저장 - db저장
+        stu.append({'no':no,'name':name,'kor':kor,\
+                    'eng':eng,'math':math,'total':total,\
+                        'avg':avg})
+        print(f"{name} 학생성적이 저장되었습니다.")
+        print()
+        # score = [0]*3
+        # for i in range(3):
+        #     score[i] = int(input(f"{title[i+2]} 점수입력 : "))
+        sno += 1
+        s_output()
+
+def s_output(): # 학생성적출력부분 함수
+    print()
+    print("[ 학생성적출력 ]")
+    print("-"*60)
+    print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(*title))
+    print("-"*60)
+    if len(stu)==0:
+        print("*** 학생데이터가 없습니다. ***")
+    else:
+        for s in stu:
+            print(f"{s['no']}\t{s['name']}\t{s['kor']}\t{s['eng']}\t{s['math']}\t{s['total']}\t{s['avg']:.2f}")
+    print()
+
+def s_update(): # 학생성적수정
+    print()
+    print("[ 학생성적수정 ]")
+    name = input("찾을려는 학생이름을 입력하세요.>> ")
+    temp = 0
+    for i,s in enumerate(stu):
+        if s['name']==name:
+            print(f"{name} 학생을 찾았습니다.")
+            temp = 1
+            break
+
+    if temp == 0:
+        print(f"{name} 학생이 없습니다.")
+    elif temp == 1:
+        print("[ 과목수정선택 ]")
+        print("1. 국어   2. 영어   3. 수학")
+        choice = int(input("원하는 번호입력 : "))
+
+        print(f"현재{title[choice+1]}점수 : {s[k_title[choice+1]]}")
+        s[k_title[choice+1]] = int(input(f"변경하려는 {title[choice+1]}점수 : "))
+        s['total'] = s['kor']+s['eng']+s['math']
+        s['avg'] = s['total']/3
+        print(f"{s[k_title[choice+1]]}점으로 {title[choice+1]}점수가 변경되었습니다.")
+
+
+
+#----------------------------------------------------
+# 실제프로그램 시작부분
+#----------------------------------------------------
+while True:
+    choice = s_mainPrint()  # 메인화면부분 함수호출
+    if choice == 1:   # 학생성적입력부분
+       s_input()
+    elif choice == 2: # 학생성적출력부분
+       s_output()
+    elif choice == 3: # 학생성적수정부분
+       s_update()
+
+
+# 람다식 - 함수요약 
+# 함수사용 
+# def sum(n1, n2): 
+#     result = n1 + n2
+#     return result 
+# print(sum(10,20))
+
+# 람다식 - 1줄만 명령어가 있어야함. 2,3줄의 명령어는 안 됨
+# lambda n1, n2 : n1 + n2 
+# sum=lambda n1, n2 : n1 + n2 
+# print(sum(10,20))
+
+# lambda n1, n2 : n1 * n2  # 결과 값이 하나만 가능 
+# sum=lambda n1:n1+10
+# print(sum(10))
+
+# +10씩 반복적으로 하여 출력하시오.
+# mList = [1,2,3,4,5] 
+# mList2=[]
+# for m in mList:
+#     mList2.append(m+10)
+# print(mList2)
+
+# def add(num):
+#     return num+10
+# mList = [1,2,3,4,5] 
+# a_arr=[]
+# for m in mList:
+#     a_arr.append(add(m))
+#     print(a_arr)
+
+# mList = [1,2,3,4,5] 
+# a_arr=[]
+# a_arr = [m+10 for m in mList] # 리스트 내포 
+# print(a_arr)
+
+# # map(함수, 리스트) -> map은 앞쪽에는 함수, 뒤쪽에는 리스트로 구성. 
+# mList = [1,2,3,4,5] 
+# a_lam = lambda num:num+10 
+# mList2 = list(map(a_lam, [1,2,3,4,5]))
+# print(mList2)
+
+# 문자열리스트를 숫자형리스트로 변환해주는 방법 
+# data = ["100", "200", "300"]
+# result = map(int,data) 
+# print(list(result))
+
+# a = [1,2,3]
+# b = [10,20,30]
+# result = map(lambda x,y: x+y, a,b)
+# print(list(result))
+
+# factorial 재귀함수. 자기자신을 부르는 함수 
+# 1~4까지의 수의 곱을 구하시오.
+# result = 1
+# for i in range (1,5):
+#     result *= i 
+# print(result )
+
+# def fact1(num):
+#     if num <= 1: return num
+#     else:return num * fact1(num-1) # 자기자신을 부른다는 의미 
+# print(fact1(4))
+
+# 예외처리 (exception handling)
+# 조건문을 사용하는 방법
+# try 구문을 사용하는 방법 
+
+# print(1)
+# pront(1) # 구문오류  
+
+# 런타임에러 
+# arr = [1,2,3,4,5]
+# while True:
+#     choice = int(input("0~4까지 숫자 입력 : "))
+#     if choice>4:
+#         print("잘못입력하셨습니다. 다시 입력하세요.")
+#         continue
+#     print("선택값 : ", arr[choice]) 
+
+
+# try : 예외가 발생할 가능성이 있는 코드 
+# except : 예외가 발생할 때 실행하는 코드  
+
+# arr = [1,2,3,4,5]
+# while True:
+#     try:
+#         choice = int(input("0~4까지 숫자 입력 : "))
+#         print("선택값 : ", arr[choice]) 
+#     except:
+#         print("에러가 났습니다.")
+
+# 예외처리 (exception handling)
+# 조건문을 사용하는 방법
+# try 구문을 사용하는 방법 
+
+# print(1)
+# pront(1) # 구문오류  
+
+# 런타임에러 
+# arr = [1,2,3,4,5]
+# while True:
+#     choice = int(input("0~4까지 숫자 입력 : "))
+#     if choice>4:
+#         print("잘못입력하셨습니다. 다시 입력하세요.")
+#         continue
+#     print("선택값 : ", arr[choice]) 
+
+
+# try : 예외가 발생할 가능성이 있는 코드 
+# except : 예외가 발생할 때 실행하는 코드  
+
+# arr = [1,2,3,4,5]
+# while True:
+#     choice = int(input("0~4까지 숫자 입력 : "))
+#     print("선택값 : ", arr[choice]) 
+
+# arr = [1,2,3,4,5]
+# while True:
+#     choice = input("0~4까지 숫자 입력 : ")
+#     if choice.isdigit():
+#         choice = int(choice) # 문자를 넣어도 에러는 안 남 
+#     else:
+#         print("숫자만 입력이 가능합니다. 다시 입력하세요.")
+#         continue
+#     print("선택값 : ", arr[choice]) 
+    # try:
+    #     choice = int(input("0~4까지 숫자 입력 : "))
+    #     print("선택값 : ", arr[choice]) 
+    # except Exception as e: # 무슨 에러가 났는지에 대한 이유를 알려줌 
+    #     print("에러가 났습니다.")
+    #     print(e)
+
+# print(1)
+# try:
+#     print(2)
+#     print(3)
+#     print(10/0) # 에러가 남. 에러가 나면 그 이후의 except 항목을 찾아 그 이후부터 출력함. 즉. 4가 출력이 안남. 
+#                 # 그러나 print(10/0) 이 주석처리가 된 경우에는 1,2,3,4,7 만 출력 즉 try 구문이 에러가 안 났으면 except 구문은 출력이 안 됨 
+#     print(4)
+# except Exception as E:
+#     print(Exception)
+#     print(5)
+#     print(6)
+
+# print(7)
+# as 로 쓸 경우 별명이나 닉네임 또는 이름을 줄여서 사용해도 됨. 
+
+# try:
+# except : 
+#     pass # 그냥 구동만 해줘라는 의미 
+# finally 는 무조건 실행할 코드 의미 많이 사용 
+
+# raise : 강제로 에러를 발생하는 코드 프로그램 구현 안 된 부분을 확인시키는 코드 
+
+# print(1)
+# print(2)
+# print(3)
+# raise NotImplementedError
+# print(4)
+# print(5)
+# print(6)
+# print(7)
+
+choice = int(input("원하는 번호입력 : "))
+if choice == 1:
+    print("학생성적입력부분")
+elif choice == 2:
+    print("출력")
+elif choice == 3:
+    print("검색")
+elif choice == 4:
+    print("수정")
+elif choice == 5:
+    print("삭제")
+
+
+
+
+
+
+
