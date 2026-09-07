@@ -33,15 +33,15 @@
 #         sum += i
 #     print(sum)
 
-# def add():
-#     sum = 0
-#     num = int(input("숫자를 입력하세요. >>"))
-#     for i in range(1, num+1):
-#         sum += i
-#     print(sum)
+def add():
+    sum = 0
+    num = int(input("숫자를 입력하세요. >>"))
+    for i in range(1, num+1):
+        sum += i
+    print(sum)
 
-# for i in range(10):
-#     add()
+for i in range(10):
+    add()
 
 def add():
     sum = 0
@@ -89,8 +89,13 @@ for i in range(10):
 
 
 
+def add2(num2):
+    sum = 0 
+    for i in range(1, num2+1):
+        sum += i
+    print(sum)
 
 
-
-
-
+for i in range(10):
+    num2 = int(input("숫자를 입력하세요. >>"))
+    add2(num2)

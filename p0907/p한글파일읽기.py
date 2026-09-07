@@ -71,14 +71,9 @@
 
 # abc 출력하시오. 
 
-with open("c:/aaa/abc.txt","r",encoding="utf-8") as f:
+with open("C:/aaa/abc.txt", "r", encoding="utf-8") as f:
     while True:
         str = f.readline()
         if str == "" : break
         str = str.strip()
         print(str, end="\t")
-
-
-
-
-

@@ -1,4 +1,4 @@
-def add():
+ef add():
     num = int(input("숫자를 입력하세요. >>"))
     sum = 0
     for i in range(1,num+1):
@@ -86,8 +86,7 @@ def hap2(num1,num2):
 
 def hap3(num1,num2):
     sum = num1+num2
-    return sum
-
+    return sum이병호  [오전 11:05]
 # stu.txt 출력하시오.
 
 
@@ -111,8 +110,7 @@ def hap3(num1,num2):
 #     print(str,end="")
 # readFile.close()
 # print("프로그램 종료")
-
-
+#aix융복합인재양성과정1-전체 이병호  [오전 11:38]
 # stu.txt 출력하시오.
 stuList = []
 with open("c:/aaa/stu.txt","r",encoding="utf-8") as f:
@@ -152,6 +150,102 @@ with open("c:/aaa/aaa.txt","r",encoding="utf-8") as f:
             sum += str
         print(str,end="")
 
-print("합계 : ",sum)
+print("합계 : ",sum)이병호  [오후 1:03]
+with open("common/stu.txt","a",encoding="utf-8") as f:
+    allStr = ""
+    while True:
+        outStr = input("내용입력 : ")
+        if outStr == "":
+            f.write(allStr+"\n")
+            break
+        allStr += (outStr+",")
+        print(allStr)[오후 1:07]CSV 1.csvCSV이병호  [오후 1:13]
+m_str = '"서울특별시  (1100000000)","9,330,658","4,482,949","          2.08","4,504,432","4,826,226","          0.93"'이병호  [오후 2:47]
+rf = open("c:/aaa/1.jpg","rb")
+wf = open("c:/aaa2/2.jpg","wb")
+
+while True:
+    fdata = rf.read(1)
+    if not fdata: break
+    wf.write(fdata)
+
+rf.close()
+wf.close()
+
+print("이미지파일이 복사되었습니다.")
 
 
+rf = open("c:/aaa/1.jpg","rb")
+wf = open("c:/aaa2/2.jpg","wb")
+
+while True:
+    fdata = rf.read(1)
+    if not fdata: break
+    wf.write(fdata)
+
+rf.close()
+wf.close()
+
+print("이미지파일이 복사되었습니다.")이병호  [오후 3:23]
+# common폴더안에 stu.txt로 파일을 저장하시오.
+
+with open("common/stu.txt","a",encoding="utf-8") as f:
+    allStr = ""
+    no = 0
+    while True:   # 1,홍길동,100    / 1,홍길동,100,
+        outStr = input("내용입력 : ")
+        if no == 0:
+            allStr += outStr
+            no += 1
+            continue
+
+        if outStr == "":
+            f.write(allStr+"\n")
+            break
+        allStr += ","+outStr
+        no += 1
+    print(allStr)
+# 1,홍길동,100,100,100,300,100.0,
+
+
+stuList = []
+title = ["번호","이름","국어","영어","수학","합계","평균","등수"]
+stuNum = 1
+
+while True:
+    print("[ 학생성적프로그램 ]")
+    print("1. 성적입력")
+    print("2. 성적출력")
+    print("3. 성적수정")
+    print("0. 프로그램종료")
+    print("-"*60)
+    choice = int(input("원하는 번호 입력 : "))
+    if choice == 1:
+        print()
+        print("[ 학생성적입력 ]")
+        no = stuNum
+        name = input(f"{stuNum}번째. 학생이름 : ")
+        kor = int(input("국어 : "))
+        eng = int(input("영어 : "))
+        math = int(input("수학 : "))
+        total = kor+eng+math
+        avg = total/3
+        rank = 0
+        stuList.append({'no':no,'name':name,'kor':kor,\
+                        'eng':eng,'math':math,\
+                            'total':total,'avg':avg,\
+                                'rank':rank,})
+        print(f"{stuNum}.{name} 학생성적이 저장되었습니다.")
+        print()
+        stuNum += 1
+
+    elif choice == 2:
+        pass
+    elif choice == 3:
+        pass
+    elif choice == 9:
+        pass
+    else:
+        print("프로그램 종료")
+        break
+aix융복합인재양성과정1-전체에 메시지 보내기

@@ -93,3 +93,32 @@ with open("C:/aaa/test2.txt","r",encoding="utf-8") as f:
                 arr=int(a)
         stu.append({'no':arr[0]}, {'name':arr[1]}, {'kor':arr[2]}, {'eng':arr[3]}, {'math':arr[4]}, {'total':arr[5]}, {'avg':arr[6]})
 
+def s_mainPrint():
+    print("[ 학생성적프로그램 ]")
+    print("1. 학생성적입력")
+    print("1. 학생성적출력")
+    print("1. 학생성적수정")
+    print("-"*60)
+    choice = int(input("원하는 번호를 입력하세요. >>"))
+    print()
+    return choice
+
+def s_input():
+    no = sno
+    print("[ 학생성적입력 ]")
+    name = input(f"{no} 번째 이름 입력 (0. 이전화면 이동): ")
+    if name == 0 : break 
+    kor = int(input("국어점수 입력 : "))
+    eng = int(input("영어점수 입력 : "))
+    math = int(input("수학점수 입력 : "))
+    total = kor+eng+math
+    avg = total / 3 
+
+    stu.append({'no': no, 'name': name, 'kor': kor, 'eng': eng, 'math': math, 'total': total, 'avg': avg})
+
+    
+
+
+
+        
+

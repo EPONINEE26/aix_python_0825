@@ -1,0 +1,35 @@
+# 파일복사하기 
+
+# import os 
+
+# # aaa 폴더 내 파일을 aaa2로 이동하여 복사하기 
+# rf = open("c:/aaa/2.png", "rb")  # rb 리드 바이너리 
+# wf = open("c:/aaa2/2.png", "wb") 
+
+# while True:
+#     fdata = rf.read(1) 
+#     if not fdata: break 
+#     wf.write(fdata) 
+
+# rf.close()
+# wf.close()
+
+# print("이미지파일이 복사되었습니다.") 
+
+
+import os 
+
+# aaa 폴더 내 파일을 aaa2로 이동하여 복사하기 
+rf = open("c:/aaa/1.jpg", "rb")  # rb 리드 바이너리 
+wf = open("c:/aaa2/2.jpg", "wb") 
+
+while True:
+    fdata = rf.read(1) 
+    if not fdata: break 
+    wf.write(fdata) 
+
+rf.close()
+wf.close()
+
+print("이미지파일이 복사되었습니다.") 
+
