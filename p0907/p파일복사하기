@@ -3,7 +3,7 @@
 # import os 
 
 # # aaa 폴더 내 파일을 aaa2로 이동하여 복사하기 
-# rf = open("c:/aaa/2.png", "rb")  # rb 리드 바이너리 
+# rf = open("c:/aaa/2.png", "rb")  # rb 리드 바이너리 b 붙이면 파일을 복사하겠다는 의미 
 # wf = open("c:/aaa2/2.png", "wb") 
 
 # while True:
