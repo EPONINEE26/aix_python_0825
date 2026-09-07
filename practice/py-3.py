@@ -1,82 +1,129 @@
-my_info={"id":"aaa", "pw":"1111", "name":"홍길동", "money":10000000, "bonusPoint":0}
+# my_info={"id":"aaa", "pw":"1111", "name":"홍길동", "money":10000000, "bonusPoint":0}
+
+# while True:
+#         print("[ 쇼핑몰에 오신것을 환영합니다. ]")
+#         id = input("아이디 : ")
+#         pw = input("패스워드 : ")
+
+#         if my_info["id"] == id and my_info["pw"]==pw:
+#                 print("로그인이 되었습니다.") 
+#         else:
+#                 print("아이디 또는 패스워드가 일치하지 않습니다.")
+
+#         while True: 
+#                 cart = []
+#                 s_arr  = [ 
+#                         {"p_name": "컴퓨터", "price": 1000000},
+#                         {"p_name": "냉장고", "price": 2000000},
+#                         {"p_name": "오디오", "price": 500000},
+#                         {"p_name": "세탁기", "price": 1500000}
+#                 ]
+
+#                 print("1. 컴퓨터")
+#                 print("2. 냉장고")
+#                 print("3. 오디오")
+#                 print("4. 세탁기") 
+                
+
+#                 for i,v in enumerate(s_arr): 
+#                         print(f"{i+1}.{v['p_name']}:{v['price']:,}원")
+#                         choice=int(input("원하는 번호를 입력하세요.>>"))
+
+
+my_info = {"id": "aaa", "pw": "1111", "name": "홍길동", "money": 10000000, "bonusPoint": 0}
 
 while True:
         print("[ 쇼핑몰에 오신것을 환영합니다. ]")
         id = input("아이디 : ")
         pw = input("패스워드 : ")
 
-        if my_info["id"] == id and my_info["pw"]==pw:
+        if my_info["id"] == id and my_info["pw"] == pw:
                 print("로그인이 되었습니다.") 
+                break 
         else:
                 print("아이디 또는 패스워드가 일치하지 않습니다.")
 
-        while True: 
-                cart = []
-                s_arr  = [ 
-                        {"p_name": "컴퓨터", "price": 1000000},
-                        {"p_name": "냉장고", "price": 2000000},
-                        {"p_name": "오디오", "price": 500000},
-                        {"p_name": "세탁기", "price": 1500000}
-                ]
+cart = []
+s_arr = [ 
+        {"p_name": "컴퓨터", "price": 1000000, "bonusPoint": 10000},
+        {"p_name": "냉장고", "price": 2000000, "bonusPoint": 20000},
+        {"p_name": "오디오", "price": 500000, "bonusPoint": 5000},
+        {"p_name": "세탁기", "price": 1500000, "bonusPoint": 15000}
+]
 
-                print("1. 컴퓨터")
-                print("2. 냉장고")
-                print("3. 오디오")
-                print("4. 세탁기") 
-                
+while True: 
+        print("[ 쇼핑몰 구매사이트 ]")
+    
+        for i, v in enumerate(s_arr): 
+                print(f"{i+1}.{v['p_name']}:{v['price']:,}원")
+        
+    # 1. 사용자가 번호(1~4)를 입력합니다.
+        choice = int(input("원하는 번호를 입력하세요.>>"))
+    
+    # 2. 💡 [핵심] choice = 1 고정 코드를 지우고, 입력받은 choice 번호가 1~4 사이인지 확인합니다.
+        if 1 <= choice <= 4:
+        # 사용자가 선택한 상품의 정보를 s_arr에서 가져옵니다 (인덱스는 choice - 1)
+        selected_item = s_arr[choice - 1]
+        
+        # 3. 💡 고정된 '컴퓨터' 글자 대신 선택한 상품 이름이 동적으로 나오도록 수정합니다.
+        no = int(input(f"{selected_item['p_name']}를 구매하시겠습니까? (구매:1, 취소:0)>> "))
+        
+        if no == 1:
+        print(f"{selected_item['p_name']} 구매완료")
+        my_info['money'] -= selected_item['price']
+        my_info['bonusPoint'] += selected_item['bonusPoint']
+        print(f"m머니 : {my_info['money']:,}원")
+        print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
+        break # 구매가 완료되면 멈추도록 설정 (계속 쇼핑하려면 제거 가능)
 
-                for i,v in enumerate(s_arr): 
-                        print(f"{i+1}.{v['p_name']}:{v['price']:,}원")
-                        choice=int(input("원하는 번호를 입력하세요.>>"))
 
+        print(f"현재 보유금액: {my_info['money']:,}원")
+        print(f"현재 보너스금액 : {my_info['bonusPoint']:,}원")
+        print("-"*40) 
 
-                print(f"현재 보유금액: {my_info['money']:,}원")
-                print(f"현재 보너스금액 : {my_info['bonusPoint']:,}원")
-                print("-"*40) 
+        def p_cal(choice):
+                print(f"구매상품 : {s_arr[choice-1]['p_name']}")
+                print(f"구매가격 : {s_arr[choice-1]['price']:,원}")
 
-                def p_cal(choice):
-                        print(f"구매상품 : {s_arr[choice-1]['p_name']}")
-                        print(f"구매가격 : {s_arr[choice-1]['price']:,원}")
+                my_info['money'] -= s_arr[choice-1]['price']
+                print(f"상품구매 후 보우금액 : {my_info['money']:,원}")
+                return choice 
 
-                        my_info['money'] -= s_arr[choice-1]['price']
-                        print(f"상품구매 후 보우금액 : {my_info['money']:,원}")
-                        return choice 
+        choice=1
+        if choice==1:
+                no=int(input(f"{s_arr[choice-1]['p_name']} 를 구매하시겠습니까? (구매:1, 취소:0)"))
+                if no==1:
+                        print(f"{s_arr[choice-1]['p_name']} 컴퓨터 구매완료")
+                my_info['money'] -= s_arr[choice-1]['price']
+                my_info['bonusPoint'] += s_arr[choice-1]['bonusPoint']
+                print(f"m머니 : {my_info['money']:,}원")
+                print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
+        if choice==2:
+                no=int(input(f"{s_arr[choice-1]['p_name']} 를 구매하시겠습니까? (구매:1, 취소:0)"))
+                if no==2:
+                        print(f"{s_arr[choice-1]['p_name']} 컴퓨터 구매완료")
+                my_info['money'] -= s_arr[choice-1]['price']
+                my_info['bonusPoint'] += s_arr[choice-1]['bonusPoint']
+                print(f"m머니 : {my_info['money']:,원}")
+                print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
 
-                choice=1
-                if choice==1:
-                        no=int(input(f"{s_arr[choice-1]['p_name']} 를 구매하시겠습니까? (구매:1, 취소:0)"))
-                        if no==1:
-                                print(f"{s_arr[choice-1]['p_name']} 컴퓨터 구매완료")
-                                my_info['money'] -= s_arr[choice-1]['price']
-                                my_info['bonusPoint'] += s_arr[choice-1]['bonusPoint']
-                                print(f"m머니 : {my_info['money']:,}원")
-                                print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
-                if choice==2:
-                        no=int(input(f"{s_arr[choice-1]['p_name']} 를 구매하시겠습니까? (구매:1, 취소:0)"))
-                        if no==2:
-                                print(f"{s_arr[choice-1]['p_name']} 컴퓨터 구매완료")
-                                my_info['money'] -= s_arr[choice-1]['price']
-                                my_info['bonusPoint'] += s_arr[choice-1]['bonusPoint']
-                                print(f"m머니 : {my_info['money']:,원}")
-                                print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
+        if choice==3:
+                no=int(input(f"{s_arr[choice-1]['p_name']} 를 구매하시겠습니까? (구매:1, 취소:0)"))
+                if no==3:
+                        print(f"{s_arr[choice-1]['p_name']} 컴퓨터 구매완료")
+                my_info['money'] -= s_arr[choice-1]['price']
+                my_info['bonusPoint'] += s_arr[choice-1]['bonusPoint']
+                print(f"m머니 : {my_info['money']:,원}")
+                print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
 
-                if choice==3:
-                        no=int(input(f"{s_arr[choice-1]['p_name']} 를 구매하시겠습니까? (구매:1, 취소:0)"))
-                        if no==3:
-                                print(f"{s_arr[choice-1]['p_name']} 컴퓨터 구매완료")
-                                my_info['money'] -= s_arr[choice-1]['price']
-                                my_info['bonusPoint'] += s_arr[choice-1]['bonusPoint']
-                                print(f"m머니 : {my_info['money']:,원}")
-                                print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
-
-                if choice==4:
-                        no=int(input(f"{s_arr[choice-1]['p_name']} 를 구매하시겠습니까? (구매:1, 취소:0)"))
-                        if no==4:
-                                print(f"{s_arr[choice-1]['p_name']} 컴퓨터 구매완료")
-                                my_info['money'] -= s_arr[choice-1]['price']
-                                my_info['bonusPoint'] += s_arr[choice-1]['bonusPoint']
-                                print(f"m머니 : {my_info['money']:,}원")
-                                print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
+        if choice==4:
+                no=int(input(f"{s_arr[choice-1]['p_name']} 를 구매하시겠습니까? (구매:1, 취소:0)"))
+                if no==4:
+                        print(f"{s_arr[choice-1]['p_name']} 컴퓨터 구매완료")
+                my_info['money'] -= s_arr[choice-1]['price']
+                my_info['bonusPoint'] += s_arr[choice-1]['bonusPoint']
+                print(f"m머니 : {my_info['money']:,}원")
+                print(f"m보너스포인트 : {my_info['bonusPoint']:,}원")
 
 
 # title = ["번호", "이름", "국어", "영어", "수학", "합계", "평균"]

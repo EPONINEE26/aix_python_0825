@@ -1,0 +1,157 @@
+def add():
+    num = int(input("숫자를 입력하세요. >>"))
+    sum = 0
+    for i in range(1,num+1):
+        sum += i
+    print(sum)
+
+# 매개변수 1개
+def add2(num2):
+    pass
+# 매개변수 2개
+def add3(num3,num4):
+    pass
+
+
+# 10 반복
+for i in range(10):
+    add()
+
+for i in range(10):
+    num2 = int(input("숫자를 입력하세요. >>"))
+    add2(num2)
+
+for i in range(10):
+    num3 = int(input("숫자를 입력하세요. >>"))
+    num4 = int(input("숫자를 입력하세요. >>"))
+    add2(num3,num4)이병호  [오전 10:22]
+# hap() 함수
+def hap():
+    num1 = int(input("숫자입력1 : "))
+    num2 = int(input("숫자입력2 : "))
+    sum = num1+num2
+    print(sum)
+
+def hap2():
+    pass
+
+def hap3():
+    pass
+
+
+# 1. 매개변수X, return X - hap()
+hap()
+
+
+# 2. 매개변수 O, return X - hap2()
+num1 = int(input("숫자입력1 : "))
+num2 = int(input("숫자입력2 : "))
+sum = hap(num1,num2)
+print(sum)
+print("프로그램 종료")
+
+# 3. 매개변수 O, return O - hap3()
+num1 = int(input("숫자입력1 : "))
+num2 = int(input("숫자입력2 : "))
+sum = hap(num1,num2)
+print(sum)
+print("프로그램 종료")이병호  [오전 10:42]
+import func
+
+# 1. 매개변수X, return X - hap()
+func.hap()
+print("hap()완료")
+
+# 2. 매개변수 O, return X - hap2()
+num1 = int(input("숫자입력1 : "))
+num2 = int(input("숫자입력2 : "))
+func.hap2(num1,num2)
+print("hap2()완료")
+
+# 3. 매개변수 O, return O - hap3()
+num1 = int(input("숫자입력1 : "))
+num2 = int(input("숫자입력2 : "))
+sum = func.hap3(num1,num2)
+print(sum)
+print("hap3()완료")[오전 10:42]# hap() 함수
+def hap():
+    num1 = int(input("숫자입력1 : "))
+    num2 = int(input("숫자입력2 : "))
+    sum = num1+num2
+    print(sum)
+
+def hap2(num1,num2):
+    sum = num1+num2
+    print(sum)
+
+def hap3(num1,num2):
+    sum = num1+num2
+    return sum
+
+# stu.txt 출력하시오.
+
+
+
+
+
+
+# # 한글은 꼭 ,encoding="utf-8"
+# # with 파일읽어오기 - close생략가능
+# with open("c:/aaa/abc.txt","r",encoding="utf-8") as f:
+#     while True:
+#         str = f.readline()
+#         if str == "": break
+#         print(str,end="")
+
+# open() 파일읽어오기
+# readFile = open("c:/aaa/abc.txt","r")
+# while True:
+#     str = readFile.readline()
+#     if str == "": break
+#     print(str,end="")
+# readFile.close()
+# print("프로그램 종료")
+
+
+# stu.txt 출력하시오.
+stuList = []
+with open("c:/aaa/stu.txt","r",encoding="utf-8") as f:
+    while True:
+        str = f.readline()
+        if str == "": break
+        stu = str.split(",") #,기준으로 리스트생성
+        for i,s in enumerate(stu): # 1,홍길동,100,100,100,300,100.0
+            if 0<=i<=1: continue
+            elif 2<=i<=5:
+                stu[i] = int(s.strip())  # s[i] = 문자열 1글자
+            elif i==6:
+                stu[i] = float(s.strip()) # /n
+
+        stuList.append(stu)
+
+    print("파일읽어오기 완료!!")
+    print(stuList)이병호  [오전 11:55]
+안녕하세요.
+1000
+파이썬프로그램
+시작합니다.
+100
+다음에 봐요.
+200
+5
+3
+7
+끝이병호  [오후 12:01]
+sum = 0
+with open("c:/aaa/aaa.txt","r",encoding="utf-8") as f:
+    while True:
+        str = f.readline()
+        if str == "": break
+        if str.strip().isdigit():
+            str = int(str)
+            sum += str
+        print(str,end="")
+
+print("합계 : ",sum)
+
+
