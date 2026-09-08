@@ -1,0 +1,219 @@
+# 변수,함수 포함해서 구현
+class Car:
+    color = ""
+    speed = 0
+    tire = 0
+    door = 0
+
+    # 생성자 - 생성함수 : Car() 선언될때 실행되는 함수
+    def __init__(self,color,speed,tire,door):
+        self.color = color
+        self.speed = speed
+        self.tire = tire
+        self.door = door
+
+
+    def upSpeed(self):
+        self.speed += 10
+
+    def downSpeed(self):
+        self.speed -= 10
+
+#----------------------------------
+# 클래스를 1개 생성
+c = Car()  #객체(인스턴스) 생성 / 4개변수, 2개함수
+c.color = "white"
+c.speed = 100
+c.tire = 5
+c.door = 3
+c.upSpeed()
+# 클래스 객체선언
+c2 = Car("skyblue",200,4,5)
+c2.upSpeed()
+c3 = Car("gray",50,5,5)
+c3.upSpeed()이병호  [오전 10:49]
+class Student:
+    # 생성자
+    def __init__(self,no,name,kor,eng,math):
+        self.no = no
+        self.name = name
+        self.kor = kor
+        self.eng = eng
+        self.math = math
+        self.total = kor+eng+math
+        self.avg = (kor+eng+math)/3
+
+    # 클래스 내 함수 매개변수 첫번째 self
+    def sum(self):
+        self.sum = self.kor+self.eng+self.math
+
+    def avg(self):
+        self.avg = self.sum/3
+
+
+
+stuList = []
+# 객체선언
+s = Student(1,"홍길동",100,100,99)
+s.kor = 70    # 클래스 변수 값수정
+s.math = 100  # 클래스 변수추가
+print(s)이병호  [오전 10:56]
+class Student:
+    # 생성자
+    def __init__(self,no,name,kor,eng,math):
+        self.no = no
+        self.name = name
+        self.kor = kor
+        self.eng = eng
+        self.math = math
+        self.total = kor+eng+math
+        self.avg = (kor+eng+math)/3
+
+    # 클래스 내 함수 매개변수 첫번째 self
+    def sum(self):
+        self.sum = self.kor+self.eng+self.math
+
+    def avg(self):
+        self.avg = self.sum/3
+
+    def print(self):
+        print(self.no,self.name,self.kor,self.eng,self.math,self.total,f"{self.avg:.2f}",sep="\t")
+
+stuList = []
+# 객체선언
+s = Student(1,"홍길동",100,100,99)
+s.kor = 70    # 클래스 변수 값수정
+s.math = 100  # 클래스 변수추가
+s.print()
+
+class Student:
+
+    def __init__(self, no, name, kor, eng, math, total, avg): # 생성자 오타 수정
+        self.__no = no
+        self.__name = name
+        self.__kor = kor # 캡슐화. 클래스 내부에서만 값을 수정
+        self.__eng = eng
+        self.__math = math
+        self.__total = kor+eng+math
+        self.__avg = (kor+eng+math) / 3 
+
+    def  __str__(self): # 참조변수 
+        return f"{self.__no}\t{self.__name}\t{self.__kor}\t{self.__eng}\t{self.__math}\t{self.__total}\t{self.__avg:.2f}\t"
+
+    def get__kor(self):
+        return self.__kor
+    
+    def set__kor(self, kor):
+        self.__kor = kor  # 값을 실제로 대입하도록 연결
+
+    # 하단에서 호출되는 set__math 함수를 클래스 내부에 그대로 추가
+    def set__math(self, math):
+        self.__math = math
+
+    def sum(self):
+        self.__sum = self.__kor+self.__eng+self.__math
+        # 계산된 합계가 __str__과 print에 반영되도록 __total에도 대입
+        self.__total = self.__sum
+        
+    def avg(self):
+        self.__avg = self.__sum / 3
+
+    def print(self):
+        print(self.__no,self.__name,self.__kor,self.__eng,self.__math,self.__total,self.__avg)
+
+stuList=[]
+s = Student(1,"홍길동",100,100,99,0,0)
+print("-"*50) 
+print(s)
+print("-"*50) 
+
+# s.kor = 70 # 언더바가 있을 경우에는 처움에 넣은 정보가 그대로 유지. 
+# s.math = 40 # 언더바 2칸 
+
+s.set__kor(50)
+s.set__math(50)
+s.sum()
+s.avg()
+
+# s.print()
+print(s)  # 💡 결과를 눈으로 확인하실 수 있도록 마지막 print(s)의 주석을 해제했습니다.
+
+
+# class Student:
+#     def  __init__(self, no, name, kor, eng, math):
+#         self.no = no
+#         self.name = name
+#         self.kor = kor
+#         self.eng = eng
+#         self.math = math 
+#         self.total = kor+eng+math
+#         self.avg = (kor+eng+math)/30
+
+#     def  __str__(self):
+#         return f"{self.no}\t{self.name}\t{self.kor}\t{self.eng}\t{self.math}\t{self.total}\t{self.avg:.2f}\t"
+
+#     def sum(self):
+#         self.sum = self.kor+self.eng+self.math
+
+#     def avg(self):
+#         self.avg = self.sum/3 
+
+# stuList=[]
+# while True: 
+#     no = input("번호 : ")
+#     name = input("이름 : ")
+#     kor = int(input("국어 : "))
+#     eng = int(input("영어 : "))
+#     math = int(input("수학 : "))
+#     # s = Student(no,name,kor,eng,math) 
+#     # stuList.append(s)
+#     stuList.append(Student(no,name,kor,eng,math))
+
+#     for s in stuList:
+#         print(s) 
+
+
+class Student:
+    def  __init__(self, no, name, kor, eng, math):
+        self.no = no
+        self.name = name
+        self.kor = kor
+        self.eng = eng
+        self.math = math 
+        self.total = kor+eng+math
+        self.avg = (kor+eng+math)/3
+
+    def  __str__(self):
+        return f"{self.no}\t{self.name}\t{self.kor}\t{self.eng}\t{self.math}\t{self.total}\t{self.avg:.2f}\t"
+
+    def cal_total(self):
+        self.total = self.kor+self.eng+self.math
+
+    def cal_avg(self):
+        self.avg = self.total/3.0 
+
+stuList=[]
+s = Student(1,"홍길동",100,100,99)
+print(s)
+
+# 점수수정을 하면 sum,avg 도 함꼐 변경이 되어야함. 
+s.kor=50
+s.cal_total()
+s.cal_avg()
+print(s)
+
+# while True: 
+#     no = input("번호 : ")
+#     name = input("이름 : ")
+#     kor = int(input("국어 : "))
+#     eng = int(input("영어 : "))
+#     math = int(input("수학 : "))
+#     # s = Student(no,name,kor,eng,math) 
+#     # stuList.append(s)
+#     stuList.append(Student(no,name,kor,eng,math))
+
+#     for s in stuList:
+#         print(s) 
+
+
+
