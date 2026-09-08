@@ -22,37 +22,3 @@ class Student:
 
     def cal_avg(self):
         self.avg = self.total/3
-
-# 객체선언을 하면
-s1=Student(1,"홍길동",90,90,100) # s -> 3개의 변수가 생성됨. 
-s2=Student(2,"유관순",100,100,99) 
-
-# 출력 : 참조변수명.변수명 
-print(s1.name)
-# 수정 : 참조변수명.변수명 = 수정값 # 전체 수정은 안 하는 것이 좋음. 1개 정도 수정은 가능함. 전체 수정은 DB에서 수정하는 것이 좋음 
-s1.name="홍길자"
-print(s1.name)
-# 추가 : 참조변수명.변수명 : 없는 변수명 입력 시 추가 # 추가도 수정과 같이 거의 하지 않음 
-s1.rank = 1
-print(s1.rank) 
-
-stuList =[]
-# 전체 출력
-# print(s1.no,s1.name,s1.kor,s1.eng,s1.math,s1.total,s1.avg,sep="\t")
-# print(s2.no,s2.name,s2.kor,s2.eng,s2.math,s1.total,s1.avg,sep="\t")
-stuList.append(s1)
-stuList.append(s2)
-# stu.add(s1)
-# stu.add(s2)
-
-
-print(s1) # def __str__(self) 로 지정하면 전체 출력 가능 
-print(s2)
-
-s1.kor = 10
-s1.cal_total()
-s1.cal_avg() 
-print(s1)
-
-
-
