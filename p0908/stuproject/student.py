@@ -1,14 +1,27 @@
 class Student:
 
-    def __init__(self,no,name,kor,eng,math):
-        self.no = no
-        self.name = name
-        self.kor = kor
-        self.eng = eng
-        self.math = math
-        self.total = kor+eng+math
-        self.avg = self.total/3
-        self.rank = 0 
+
+    def __init__(self,*args):
+        if len(args) == 5: # 학생성적입력에서 객체 넣기 
+            self.no = args[0] # no
+            self.name = args[1] # name
+            self.kor = args[2]# kor
+            self.eng = args[3] # eng
+            self.math = args[4] # math
+            self.total = self.kor+self.eng+self.math
+            self.avg = self.total/3
+            self.rank = 0 
+
+        elif len(args) == 8: # stu.txt 파일에서 객체에 넣기 
+            self.no = args[0] # no
+            self.name = args[1] # name
+            self.kor = args[2]# kor
+            self.eng = args[3] # eng
+            self.math = args[4] # math
+            self.total = args[5] # self.kor+self.eng+self.math
+            self.avg = args[6] # self.total/3
+            self.rank = args[7] #0
+
 
     # 문자열 함수 
     def  __str__(self):
@@ -20,3 +33,6 @@ class Student:
 
     def s_avg(self):
         self.avg = self.total/3 
+
+    def s_str(self): # 문자 저장 
+        return f"{self.no},{self.name},{self.kor},{self.eng},{self.math},{self.total},{self.avg:.2f},{self.rank}"
