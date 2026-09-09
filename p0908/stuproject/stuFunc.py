@@ -30,7 +30,7 @@ def readStu():
 
 #학생성적파일 저장하기 - stuList의 모든것을 저장시킴
 def writeStu():
-    with open("C:/aaa/stu.txt","w",encoding="utf-8") as f:
+    with open("C:/aaa/stu.txt","a",encoding="utf-8") as f:
         for s in stus.slist:
             str = s.s_str() # Student s_str() 함수호출 
             print(str)
