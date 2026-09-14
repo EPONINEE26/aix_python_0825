@@ -1,20 +1,20 @@
 from stuFunc import *
 
 readStu()
-
 while True:
-    choice = main_screen
+
+    choice = main_screen() # main_screen 이름 에러가 10시간 넘도록 되어 여러 번 재설치 후 해결이 됨 
     if choice == 1:
         stu_input()
-    elif choice == 2: 
+    elif choice ==2:
         stu_output()
-    elif choice == 3: 
+    elif choice ==3:
         stu_update()
     elif choice == 9:
-        writeStu()
+        writeStu() 
     else:
-        print("프로그램종료")
-        break 
+        print("프로그램 죵료")
+        break
 
 
-    
+
