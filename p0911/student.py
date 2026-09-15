@@ -21,7 +21,7 @@ class Student():
  
 
     def __str__(self):
-        return f"{self.no}\t{self.name}\t{self.kor}\t{self.eng}\t{self.math}\t{self.total}\t{self.avg}"
+        return f"{self.no}\t{self.name}\t{self.kor}\t{self.eng}\t{self.math}\t{self.total}\t{self.avg:.2f}"
 
     def s_total(self):
         self.total=self.kor+self.eng+self.math
@@ -30,4 +30,4 @@ class Student():
         self.avg = self.total/3 
 
     def print(self):
-        return f"{self.no},{self.name},{self.kor},{self.eng},{self.math},{self.total},{self.avg}"
+        return f"{self.no},{self.name},{self.kor},{self.eng},{self.math},{self.total},{self.avg:.2f}"
