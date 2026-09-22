@@ -1,10 +1,25 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import requests
 from bs4 import BeautifulSoup
+import time
 import os
 
-# python -m pip install selenium 설치 
+# 브라우저 열기
+browser = webdriver.Chrome()
+url = "http://www.naver.com"
 
-url = "https://www.melon.com/chart/index.htm"
-headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36'}
-res = requests.get(url,headers=headers)
-res.raise_for_status() 
+# 1.naver페이지 열림.
+browser.get(url) # driver.get(url) 동일한 의미 
+# 브라우저의 위치값을 찾아서 클릭하기
+elem = browser.find_element(By.ID,'query')
+elem.click()
+# 뉴스페이지 이동 
+elem.send_keys("뉴스")
+elem.send_keys(Keys.ENTER)
+time.sleep(3)
+# 네이버 뉴스페이지 이동 
+elem2 = browser.find_element(By.CLASS_NAME, "sds-comps-text") 
+elem2.click()
+input()
