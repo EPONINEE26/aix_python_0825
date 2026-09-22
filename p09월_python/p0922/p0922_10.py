@@ -1,16 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+import os
 
 url = "https://www.melon.com/chart/index.htm"
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36'}
 res = requests.get(url,headers=headers)
-res.raise_for_status() #에러시 종료
-
-soup = BeautifulSoup(res.text,'lxml') 
-print("-"*50)
-
-s_tbody = soup.tbody
-ths = s_tbody.find_all("tr",{"class":"lst50"})
-for i in range(100):
-    tds = tr.find_all("td") 
-    
+res.raise_for_status() 
