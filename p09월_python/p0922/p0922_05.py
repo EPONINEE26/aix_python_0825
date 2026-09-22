@@ -32,5 +32,5 @@ print("-"*50)
 print(soup.find("input",{"class" : "input_check d_checkall"})['title'])
 
 
-
+ 
 

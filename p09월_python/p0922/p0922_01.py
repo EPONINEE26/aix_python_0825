@@ -8,7 +8,7 @@
 import random
 ran_num = random.randint(1,101)
 arr_num = []
-while True: 
+while True:  
     input_num = int(input("숫자를 입력하세요.")) 
     arr_num.append(input_num) # 입력한 숫자 리스트에 추가 
     if input_num == ran_num:

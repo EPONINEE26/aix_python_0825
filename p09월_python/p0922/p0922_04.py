@@ -13,7 +13,7 @@ res = requests.get(url, headers=headers)
 res.raise_for_status() # 에러시 종료 
 # print(res.status_code) # 상태코드 보여주는 기능 
 
-print(res.text)
+print(res.text) 
 
 with open("naver1.html", "w", encoding="utf-8") as f:
     f.write(res.text) 

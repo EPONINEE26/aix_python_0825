@@ -19,4 +19,4 @@ print(soup.find("a",{"class" : "gb_6"}))
 
 # print(soup.title.get_text())
 # print(soup.find("h2",{"id" : "mainServiceTitle"}))
-# print(soup.find_all("a",{"class" : "MyView-module_link_more_F2Dl0"}))
+# print(soup.find_all("a",{"class" : "MyView-module_link_more_F2Dl0"}))'

@@ -10,7 +10,7 @@ print(len(res.text))
 with open('google1.html', 'w', encoding="utf-8") as f: # html 소스로 저장된다는 의미 
     f.write(res.text) # html 소스 
     print("파일저장 완료")
-
+ 
 
 
 # print(res.text) # 모든 데이터 가져오는 기능 

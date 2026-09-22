@@ -10,4 +10,4 @@ with open('melon2.html', 'w', encoding="utf-8") as f:
         f.write(res.text) # html 소스 
 print("파일저장 완료")
 
-
+ 
