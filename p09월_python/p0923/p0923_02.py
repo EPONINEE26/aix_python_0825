@@ -43,6 +43,8 @@ print(s_img)
 # replace 로 html 소스에 출력된 "만" 자를 제거하는 기능으로 처리함 
 s_ul = soup.find('ul',{'class':'BestChallengeView__challenge_list--sUqhh'})
 lis = s_ul.find_all('li')
+view_total = 0
+view_avg = 0
 for i in range(3):
     s_contitle = lis[i].find('span',{'class':'ContentTitle__title--e3qXt'})
     s_title = s_contitle.find('span',{'class':'text'}).get_text(strip=True)
@@ -54,8 +56,16 @@ for i in range(3):
     print(s_star)
     s_conview = lis[i].find('span',{'class':'Rating__view_area--GQb_S'})
     s_view = int(s_conview.find('span',{'class':'text'}).get_text(strip=True)[:-1].replace(",",""))
-    print(s_view)  
+    print(s_view)
+    view_total += s_view
+    print(s_view)
+    # s_new = lis[i].find('span',{'class':'Rating__view_area--GQb_S'})
+    # s_new = int(s_new.find('span',{'class':'text'}).get_text(strip=True)[:-1].replace(",",""))
+     
 
+view_avg = view_total/3
+print(f"평균 조회수 : {view_avg :.2f}만")
+print("완료")
 a = float("9.92")
 b = float("8.0")
 c = float("9.1")
