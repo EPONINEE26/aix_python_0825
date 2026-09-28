@@ -24,21 +24,21 @@ for i in range(1,2):
     # print(prod_name)
     # print(len(lis))
     for li in lis:
-        try:
+        try: # 중간중간 이름없는 상품으로 인해 에러가 나는 것을 방지하기 위한 장치 
             prod_name = li.find('p',{'class':'prod_name'}).get_text(strip=True)
             print(prod_name)
         except:
             print('이름/가격없음')    
-    #     prod_link = li.find('a',{'class':'click_log_product_standard_price_'})['href']
-    #     prod_price = li.find('a',{'class':'click_log_product_standard_price_'}).get_text(strip=True)[:-1]
-    #     prod_price_int = int(prod_price.replace(',',''))
-    #     if prod_price_int<1500000:
-    #         print(f"{prod_name} : {prod_price} ",prod_price_int)
-    #         print("링크 : ",prod_link)
-    #     else:
-    #         print('150만원 이상 제외')
-    #     print("-"*50)
-    #     # print("개수 : ",len(lis))
+        prod_link = li.find('a',{'class':'click_log_product_standard_price_'})['href']
+        prod_price = li.find('a',{'class':'click_log_product_standard_price_'}).get_text(strip=True)[:-1]
+        prod_price_int = int(prod_price.replace(',',''))
+        if prod_price_int<1500000:
+            print(f"{prod_name} : {prod_price} ",prod_price_int)
+            print("링크 : ",prod_link)
+        else:
+            print('150만원 이상 제외')
+        print("-"*50)
+        # print("개수 : ",len(lis))
 
 
 
