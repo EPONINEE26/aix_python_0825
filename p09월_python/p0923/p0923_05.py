@@ -58,3 +58,6 @@ for idx in range(2022,2027):
         m_date = lis[i].find('span',{'class':'conts-subdesc clamp-g'}).get_text(strip=True)
         print(m_date)
         print('-'*50)
+
+
+        
