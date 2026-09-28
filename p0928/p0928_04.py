@@ -41,11 +41,12 @@ for i in range(1,6):
     lis = p_ul.find_all('li')
     # print("개수 : ", len(lis))
     prod_name = lis[0].find('p', {'class' : 'prod_name'}).get_text(strip=True)
+    prod_link = lis[0].find('a', {'class' : 'click_log_product_standard_price_'})['href']
     prod_price = lis[0].find('a', {'class' : 'click_log_product_standard_price_'}).get_text(strip=True)[:-1] # "원"자 빼고 출력 
     prod_price_int = int(prod_price.replace(",",""))
     if prod_price_int<1500000:
         print(f"{prod_name}:{prod_price} " , prod_price_int)
-        print("링크 :" , "https://search.danawa.com/dsearch.php?query=%EB%85%B8%ED%8A%B8%EB%B6%81&originalQuery=%EB%85%B8%ED%8A%B8%EB%B6%81&checkedInfo=N&volumeType=allvs&page=1&limit=40&sort=saveDESC&list=list&boost=true&tab=goods&addDelivery=N&simpleDescOpen=Y&mode=simple&isInitTireSmartFinder=N&recommendedSort=N&defaultUICategoryCode=112758&defaultPhysicsCategoryCode=860%7C869%7C10580%7C0&defaultVmTab=104290&defaultVaTab=8809942&isZeroPrice=Y&quickProductYN=N&priceUnitSort=N&priceUnitSortOrder=A")
+        print("링크 :", prod_link)
         print("-"*50)
     else:
         print("150만원 이상 제외")
