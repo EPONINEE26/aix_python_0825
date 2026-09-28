@@ -50,7 +50,7 @@ for i in range(1,6):
     else:
         print("150만원 이상 제외")
     print("-"*50)
-
+   
 
 # soup = BeautifulSoup(browser.page_source,'lxml')
 # with open('p0928/file/coupang1.html','a',encoding='utf-8') as f:

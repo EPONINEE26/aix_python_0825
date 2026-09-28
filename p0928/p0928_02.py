@@ -90,7 +90,7 @@ with open('p0928/file/yeo1.html','w',encoding='utf-8') as f:
     soup = BeautifulSoup(f,'lxml')
 
 print("완료") 
-
+   
 items = soup.find('div',{'data-testid':'virtuoso-item-list'})
 # print(items)
 y_datas = items.find_all('div',{'data-known-size' : '227'})

@@ -66,7 +66,7 @@ from dotenv import load_dotenv
 # result = inner.find('div',{'class': 'domestic_results__gp5WB'})
 # print(result)
 
-
+  
 # with open('p0928/file/flight2.html','r',encoding='utf-8') as f:
 #     soup = BeautifulSoup(f,'lxml')
 # f_divs = soup.find('div',{'class':'domestic_Flight__8bR_b'})
